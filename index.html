@@ -1,14 +1,3085 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Token Ludo - Asif Labs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Token Ludo — 16-Token Zero-Sum Dice Duel | Asif Labs</title>
+  <meta name="description" content="Token Ludo by Asif Labs is a 100% offline 16-token zero-sum dice duel for Android. Play 2-Player Pass-and-Play or Solo Bot with Quick Duel, Best of 3, and Best of 5 series." />
+  <meta name="keywords" content="Token Ludo, Asif Labs, 16-token dice duel, offline board game, 2 player pass and play, Android strategy game" />
+  <meta name="author" content="Asif Ansari, Asif Labs" />
+  <meta name="theme-color" content="#051610" />
+
+  <!-- Open Graph / Social Meta -->
+  <link rel="canonical" href="https://asiflabs-dev.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://asiflabs-dev.github.io/" />
+  <meta property="og:title" content="Token Ludo — 16 Tokens. One Dice. Pure Tactical Duel." />
+  <meta property="og:description" content="100% offline Android 16-token zero-sum dice duel. Start 8 vs 8, roll to steal tokens, watch for overshoots, and hit 16/16 for a Clean Sweep." />
+  <meta property="og:image" content="https://asiflabs-dev.github.io/assets/og-banner.png" />
+  <meta property="og:site_name" content="Token Ludo by Asif Labs" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TokenLudo_game" />
+  <meta name="twitter:title" content="Token Ludo — 16-Token Zero-Sum Dice Duel" />
+  <meta name="twitter:description" content="100% offline 16-token zero-sum dice duel for Android by Asif Labs." />
+  <meta name="twitter:image" content="https://asiflabs-dev.github.io/assets/og-banner.png" />
+
+  <!-- Structured Data (JSON-LD) for Google Search SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Token Ludo",
+      "alternateName": "Token Ludo: 16-Token Zero-Sum Dice Duel",
+      "description": "100% offline Android 16-token zero-sum dice duel for 2-Player Pass-and-Play or Solo Bot battles with Quick Duel, Best of 3, and Best of 5 series.",
+      "url": "https://asiflabs-dev.github.io/",
+      "image": "https://asiflabs-dev.github.io/assets/app_icon.jpg",
+      "operatingSystem": "Android",
+      "applicationCategory": "GameApplication",
+      "genre": ["Board", "Strategy", "Casual"],
+      "playMode": ["SinglePlayer", "MultiPlayer"],
+      "author": {
+        "@type": "Organization",
+        "name": "Asif Labs",
+        "founder": {
+          "@type": "Person",
+          "name": "Asif Ansari"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo"
+      }
+    }
+  </script>
+
+  <!-- Inline SVG Favicon matching the New Official Token Ludo 3D App Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%233A1908'/%3E%3Cstop offset='100%25' stop-color='%23120602'/%3E%3C/linearGradient%3E%3ClinearGradient id='gold' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FEF08A'/%3E%3Cstop offset='50%25' stop-color='%23F59E0B'/%3E%3Cstop offset='100%25' stop-color='%23B45309'/%3E%3C/linearGradient%3E%3CradialGradient id='glow' cx='50%25' cy='46%25' r='45%25'%3E%3Cstop offset='0%25' stop-color='%23FBBF24' stop-opacity='0.7'/%3E%3Cstop offset='100%25' stop-color='%23120602' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect x='3' y='3' width='58' height='58' rx='15' fill='url(%23bg)' stroke='url(%23gold)' stroke-width='3.5'/%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='url(%23glow)'/%3E%3Cg%3E%3Crect x='9' y='37' width='13' height='4' rx='1.5' fill='%230891B2'/%3E%3Crect x='9' y='33' width='13' height='4' rx='1.5' fill='%2306B6D4'/%3E%3Crect x='9' y='29' width='13' height='4' rx='1.5' fill='%2322D3EE'/%3E%3Crect x='9' y='25' width='13' height='4' rx='1.5' fill='%2367E8F9'/%3E%3C/g%3E%3Cg%3E%3Crect x='42' y='37' width='13' height='4' rx='1.5' fill='%23B91C1C'/%3E%3Crect x='42' y='33' width='13' height='4' rx='1.5' fill='%23DC2626'/%3E%3Crect x='42' y='29' width='13' height='4' rx='1.5' fill='%23EF4444'/%3E%3Crect x='42' y='25' width='13' height='4' rx='1.5' fill='%23FB923C'/%3E%3C/g%3E%3Cpolygon points='32,16 46,23 32,30 18,23' fill='%23FFFFFF'/%3E%3Cpolygon points='18,23 32,30 32,46 18,39' fill='%23E4E4E7'/%3E%3Cpolygon points='46,23 32,30 32,46 46,39' fill='%23D4D4D8'/%3E%3Ccircle cx='32' cy='20.5' r='1.7' fill='%23DC2626'/%3E%3Ccircle cx='26.5' cy='23' r='1.7' fill='%23DC2626'/%3E%3Ccircle cx='37.5' cy='23' r='1.7' fill='%23DC2626'/%3E%3Ccircle cx='32' cy='25.5' r='1.7' fill='%23DC2626'/%3E%3Ccircle cx='22' cy='28.5' r='1.4' fill='%237E22CE'/%3E%3Ccircle cx='22' cy='33' r='1.4' fill='%237E22CE'/%3E%3Ccircle cx='22' cy='37.5' r='1.4' fill='%237E22CE'/%3E%3Ccircle cx='27.5' cy='31.2' r='1.4' fill='%237E22CE'/%3E%3Ccircle cx='27.5' cy='35.7' r='1.4' fill='%237E22CE'/%3E%3Ccircle cx='27.5' cy='40.2' r='1.4' fill='%237E22CE'/%3E%3Ccircle cx='36' cy='32' r='1.4' fill='%23DC2626'/%3E%3Ccircle cx='42' cy='29' r='1.4' fill='%23DC2626'/%3E%3Ccircle cx='39' cy='35' r='1.4' fill='%23DC2626'/%3E%3Ccircle cx='36' cy='40.5' r='1.4' fill='%23DC2626'/%3E%3Ccircle cx='42' cy='37.5' r='1.4' fill='%23DC2626'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Outfit (Headings) & Inter (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#051610',
+            surface: '#071e16',
+            card: '#0a281e',
+            borderGreen: '#143d2e',
+            gold: '#E8B416',
+            goldHover: '#f4c531',
+            inkDark: '#08140f',
+            emeraldP2: '#10B981',
+            espresso: '#140b0b',
+            inkLight: '#f3f8f5',
+            mutedText: '#92b3a5',
+          },
+          fontFamily: {
+            display: ['Outfit', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 16px 40px -14px rgba(0, 0, 0, 0.78)',
+            'gold-cta': '0 10px 26px -6px rgba(232, 180, 22, 0.42)',
+            'phone': '0 28px 65px -16px rgba(0, 0, 0, 0.88)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Base Forest Emerald Palette & Zero Horizontal Overflow */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #051610;
+      color: #f3f8f5;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle Hero Ambient Glow */
+    .hero-ambient {
+      background:
+        radial-gradient(ellipse 65% 50% at 20% 18%, rgba(16, 185, 129, 0.11) 0%, rgba(5, 22, 16, 0) 70%),
+        radial-gradient(ellipse 55% 45% at 80% 28%, rgba(232, 180, 22, 0.09) 0%, rgba(5, 22, 16, 0) 68%);
+    }
+
+    /* Emerald Felt Tabletop Texture */
+    .emerald-felt-surface {
+      background-color: #042016;
+      background-image:
+        radial-gradient(ellipse 80% 70% at 50% 48%, #083d28 0%, #052b1c 56%, #031f14 100%),
+        repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 4px);
+    }
+
+    /* Royal Marble Board Surface Texture with Subtle Gold/Beige Veins */
+    .marble-surface {
+      background-color: #f7f3eb;
+      background-image:
+        linear-gradient(128deg, transparent 18%, rgba(196, 173, 134, 0.34) 22%, transparent 25%),
+        linear-gradient(142deg, transparent 52%, rgba(212, 185, 138, 0.42) 55%, rgba(180, 152, 108, 0.18) 58%, transparent 61%),
+        linear-gradient(115deg, transparent 74%, rgba(188, 165, 128, 0.28) 77%, transparent 80%),
+        linear-gradient(155deg, #f7f3eb 0%, #efe7da 48%, #e2d5c3 100%);
+    }
+
+    /* Matte Obsidian Board Surface Texture */
+    .obsidian-surface {
+      background-color: #101218;
+      background-image:
+        radial-gradient(ellipse 80% 70% at 50% 48%, #222530 0%, #14161e 58%, #0c0d12 100%),
+        repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 4px);
+    }
+
+    /* High-Contrast Adjustments when Royal Marble is Active on the Live Hero Board */
+    #hero-board-surface.marble-surface .player-zone-active {
+      background: rgba(20, 16, 10, 0.78) !important;
+      border-color: #d97706 !important;
+      box-shadow: 0 8px 22px rgba(180, 130, 20, 0.32);
+    }
+
+    #hero-board-surface.marble-surface .player-zone-idle {
+      background: rgba(15, 23, 20, 0.76);
+      border-color: rgba(180, 140, 60, 0.35);
+    }
+
+    #hero-board-surface.marble-surface #hero-tap-hint {
+      color: #065f46;
+    }
+
+    #hero-board-surface.marble-surface #hero-timer-text {
+      color: #047857 !important;
+    }
+
+    /* Active Player Turn Card: Glowing Gold Border + Olive-Gold Translucent Fill */
+    .player-zone-active {
+      background: rgba(138, 134, 24, 0.32) !important;
+      border: 1.5px solid #E8B416 !important;
+      box-shadow: 0 0 18px rgba(232, 180, 22, 0.45), inset 0 0 16px rgba(232, 180, 22, 0.14);
+    }
+
+    .player-zone-idle {
+      background: rgba(3, 20, 14, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Overflow-Proof 3D Stacked Token Disc Container (Fixed 54px Height) */
+    .disc-stack {
+      position: relative;
+      width: 68px;
+      height: 54px;
+      flex-shrink: 0;
+    }
+
+    .disc-stack-sm {
+      position: relative;
+      width: 54px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    .token-disc {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 15px;
+      border-radius: 6px;
+      transition: bottom 0.22s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+    }
+
+    .token-disc-sm {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 12px;
+      border-radius: 5px;
+    }
+
+    /* Emerald-Teal P2 Disc */
+    .disc-p2 {
+      background: linear-gradient(180deg, #10b981 0%, #059669 68%, #047857 100%);
+      border: 1.2px solid #34d399;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(167, 243, 208, 0.55);
+    }
+
+    .disc-p2-top::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 10px;
+      width: 4px;
+      height: 4px;
+      border-radius: 1px;
+      background: rgba(236, 253, 245, 0.9);
+    }
+
+    .disc-p2-top::after {
+      content: '';
+      position: absolute;
+      top: 3.5px;
+      left: 18px;
+      right: 10px;
+      height: 5px;
+      border-radius: 9999px;
+      border: 1px solid rgba(167, 243, 208, 0.85);
+      background: rgba(110, 231, 183, 0.2);
+    }
+
+    /* Gold/Cream P1 Disc */
+    .disc-p1 {
+      background: linear-gradient(180deg, #fef08a 0%, #eab308 58%, #d97706 100%);
+      border: 1.2px solid #fef9c3;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    .disc-p1-top::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 10px;
+      width: 4px;
+      height: 4px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .disc-p1-top::after {
+      content: '';
+      position: absolute;
+      top: 3.5px;
+      left: 18px;
+      right: 10px;
+      height: 5px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 251, 235, 0.9);
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Strict 3x3 CSS Grid Dice Face for Crisp Gold Pips */
+    .dice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      padding: 4px;
+    }
+
+    .dice-pip {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background-color: #facc15;
+      box-shadow: 0 0 6px rgba(250, 204, 21, 0.5);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.12s ease, transform 0.12s ease;
+    }
+
+    .dice-pip.is-on {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Dice Shake Animation */
+    .dice-shake {
+      animation: diceShake 0.34s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    }
+
+    @keyframes diceShake {
+      0%   { transform: rotate(0deg) scale(1); }
+      20%  { transform: rotate(-14deg) scale(0.92); }
+      45%  { transform: rotate(14deg) scale(1.06); }
+      70%  { transform: rotate(-8deg) scale(0.97); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+
+    /* FAQ Smooth Accordion */
+    .faq-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .faq-item[data-open="true"] .faq-content {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-inner {
+      overflow: hidden;
+    }
+
+    .faq-chevron {
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item[data-open="true"] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body style="background:#121212;color:#ffffff;font-family:sans-serif;text-align:center;padding-top:80px;">
-  <h1>Token Ludo</h1>
-  <p>Official Developer Website — Asif Labs</p>
-  <p>Privacy Policy: <a href="https://sites.google.com/view/token-ludo" style="color:#4da6ff;">View Policy</a></p>
-  <p>Support: support.tokenludo@gmail.com</p>
+<body class="selection:bg-gold/30 selection:text-inkLight">
+
+  <!-- Shared SVG Gradients for App Icon Fallbacks (Ensures Reliable Rendering Across All Browsers) -->
+  <svg aria-hidden="true" class="absolute w-0 h-0 overflow-hidden pointer-events-none" focusable="false">
+    <defs>
+      <linearGradient id="navIconBg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3A1908" />
+        <stop offset="100%" stop-color="#120602" />
+      </linearGradient>
+      <linearGradient id="navIconGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FEF08A" />
+        <stop offset="45%" stop-color="#F59E0B" />
+        <stop offset="100%" stop-color="#B45309" />
+      </linearGradient>
+      <radialGradient id="navIconGlow" cx="50%" cy="44%" r="48%">
+        <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.72" />
+        <stop offset="65%" stop-color="#B45309" stop-opacity="0.22" />
+        <stop offset="100%" stop-color="#120602" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY GLASSMORPHIC NAVBAR                                         -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 w-full bg-forest/90 backdrop-blur-md border-b border-borderGreen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-[74px]">
+
+        <!-- Brand Logo (New Official Token Ludo 3D App Icon + Seamless SVG Fallback) -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Token Ludo Home">
+          <span class="relative flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden shrink-0 shadow-[0_0_14px_rgba(232,180,22,0.35)]">
+            <img
+              src="assets/app_icon.jpg"
+              alt="Token Ludo Icon"
+              class="w-full h-full object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+            />
+            <svg class="hidden w-full h-full" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#navIconBg)" stroke="url(#navIconGold)" stroke-width="3.2" />
+              <rect x="5" y="5" width="54" height="54" rx="11" fill="url(#navIconGlow)" />
+              <!-- Left Stack: 4 Glossy Cyan 3D Tokens -->
+              <rect x="9" y="37" width="13.5" height="4.2" rx="1.6" fill="#0E7490" />
+              <rect x="9" y="33" width="13.5" height="4.2" rx="1.6" fill="#0891B2" />
+              <rect x="9" y="29" width="13.5" height="4.2" rx="1.6" fill="#06B6D4" />
+              <rect x="9" y="25" width="13.5" height="4.2" rx="1.6" fill="#22D3EE" stroke="#A5F3FC" stroke-width="0.6" />
+              <!-- Right Stack: 4 Glossy Red/Orange 3D Tokens -->
+              <rect x="41.5" y="37" width="13.5" height="4.2" rx="1.6" fill="#991B1B" />
+              <rect x="41.5" y="33" width="13.5" height="4.2" rx="1.6" fill="#DC2626" />
+              <rect x="41.5" y="29" width="13.5" height="4.2" rx="1.6" fill="#EF4444" />
+              <rect x="41.5" y="25" width="13.5" height="4.2" rx="1.6" fill="#F97316" stroke="#FED7AA" stroke-width="0.6" />
+              <!-- Center 3D Isometric White Die -->
+              <polygon points="32,16 46,23 32,30 18,23" fill="#FFFFFF" />
+              <polygon points="18,23 32,30 32,46 18,39" fill="#E4E4E7" />
+              <polygon points="46,23 32,30 32,46 46,39" fill="#D4D4D8" />
+              <!-- Top Face: 4 Red Pips -->
+              <circle cx="32" cy="20.4" r="1.7" fill="#DC2626" />
+              <circle cx="26.4" cy="23" r="1.7" fill="#DC2626" />
+              <circle cx="37.6" cy="23" r="1.7" fill="#DC2626" />
+              <circle cx="32" cy="25.6" r="1.7" fill="#DC2626" />
+              <!-- Left Face: 6 Purple Pips -->
+              <circle cx="21.8" cy="28.3" r="1.4" fill="#7E22CE" />
+              <circle cx="21.8" cy="32.8" r="1.4" fill="#7E22CE" />
+              <circle cx="21.8" cy="37.3" r="1.4" fill="#7E22CE" />
+              <circle cx="27.5" cy="31.1" r="1.4" fill="#7E22CE" />
+              <circle cx="27.5" cy="35.6" r="1.4" fill="#7E22CE" />
+              <circle cx="27.5" cy="40.1" r="1.4" fill="#7E22CE" />
+              <!-- Right Face: 5 Red Pips -->
+              <circle cx="36" cy="32" r="1.4" fill="#DC2626" />
+              <circle cx="42" cy="29" r="1.4" fill="#DC2626" />
+              <circle cx="39" cy="35" r="1.4" fill="#DC2626" />
+              <circle cx="36" cy="40.5" r="1.4" fill="#DC2626" />
+              <circle cx="42" cy="37.5" r="1.4" fill="#DC2626" />
+            </svg>
+          </span>
+
+          <div class="flex flex-col leading-none">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-inkLight">TOKEN LUDO</span>
+            <span class="text-[11px] font-medium text-emeraldP2 mt-0.5">by Asif Labs</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7" aria-label="Primary Navigation">
+          <a href="#features" class="text-sm font-medium text-mutedText hover:text-gold transition-colors">Features</a>
+          <a href="#how-to-play" class="text-sm font-medium text-mutedText hover:text-gold transition-colors">How to Play</a>
+          <a href="#screens" class="text-sm font-medium text-mutedText hover:text-gold transition-colors">Real Screens</a>
+          <a href="#faq" class="text-sm font-medium text-mutedText hover:text-gold transition-colors">FAQ</a>
+        </nav>
+
+        <!-- Right CTA + Mobile Menu Toggle -->
+        <div class="flex items-center gap-2.5">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold hover:bg-goldHover text-inkDark font-display font-bold text-sm tracking-tight transition-all shadow-gold-cta active:scale-[0.98]"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.5 3.65v16.7c0 .8.87 1.3 1.56.9l14.2-8.35c.68-.4.68-1.4 0-1.8L6.06 2.75c-.69-.4-1.56.1-1.56.9z" />
+            </svg>
+            <span>Download on Google Play</span>
+          </a>
+
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-card border border-borderGreen text-mutedText hover:text-inkLight transition-colors"
+            aria-label="Toggle Menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg id="icon-open" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+            <svg id="icon-close" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-borderGreen bg-forest/95 backdrop-blur-lg">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#features" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-mutedText hover:text-inkLight hover:bg-card">Features</a>
+        <a href="#how-to-play" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-mutedText hover:text-inkLight hover:bg-card">How to Play</a>
+        <a href="#screens" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-mutedText hover:text-inkLight hover:bg-card">Real Screens</a>
+        <a href="#faq" class="mobile-link block px-3 py-2.5 rounded-xl text-sm font-medium text-mutedText hover:text-inkLight hover:bg-card">FAQ</a>
+        <div class="pt-2.5">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-gold hover:bg-goldHover text-inkDark font-display font-bold text-sm"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.5 3.65v16.7c0 .8.87 1.3 1.56.9l14.2-8.35c.68-.4.68-1.4 0-1.8L6.06 2.75c-.69-.4-1.56.1-1.56.9z" />
+            </svg>
+            <span>Download on Google Play</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================== -->
+    <!-- 2. HERO SECTION + BUG-FREE INTERACTIVE PLAYABLE GAMEPLAY PHONE        -->
+    <!-- ===================================================================== -->
+    <section class="relative pt-10 pb-20 sm:pt-16 sm:pb-28 hero-ambient overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+          <!-- Left Column: Copy, CTAs & Home-Style Stats Strip -->
+          <div class="lg:col-span-6 text-left">
+            <div class="flex flex-wrap items-center gap-2.5 mb-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card border border-borderGreen">
+                <span class="w-2 h-2 rounded-full bg-emeraldP2 shrink-0"></span>
+                <span class="font-display text-[11px] font-bold tracking-[0.14em] uppercase text-emeraldP2">
+                  Offline Android Dice Duel &bull; By Asif Labs
+                </span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold/10 border border-gold/35">
+                <span class="font-display text-[11px] font-bold tracking-wide text-gold">v1.0 &bull; 8 Themes &amp; 15s Timer</span>
+              </div>
+            </div>
+
+            <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-[54px] leading-[1.06] tracking-tight text-inkLight">
+              16 Tokens. One Dice.
+              <span class="block text-gold mt-1">Pure Tactical Duel.</span>
+            </h1>
+
+            <p class="mt-5 text-base sm:text-lg leading-relaxed text-mutedText max-w-xl">
+              A 16-token zero-sum tug-of-war built for instant 2-player pass-and-play or solo Bot battles. Start 8 vs 8—every roll steals tokens from your rival, overshoots pass the turn, and an exact finish claims all 16.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-gold hover:bg-goldHover text-inkDark font-display font-extrabold text-base tracking-tight transition-all shadow-gold-cta active:scale-[0.98]"
+              >
+                <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4.5 3.65v16.7c0 .8.87 1.3 1.56.9l14.2-8.35c.68-.4.68-1.4 0-1.8L6.06 2.75c-.69-.4-1.56.1-1.56.9z" />
+                </svg>
+                <span>Download on Google Play</span>
+              </a>
+
+              <a
+                href="#screens"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-card hover:bg-[#0e3427] border border-borderGreen hover:border-gold/55 text-inkLight font-display font-bold text-sm sm:text-base transition-colors"
+              >
+                <span>See Real Screens</span>
+                <svg class="w-4 h-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Compact 4-Stat Strip styled like the Home Screen stats bar -->
+            <div class="mt-9 rounded-2xl bg-card border border-borderGreen px-3 sm:px-4 py-4 grid grid-cols-4 gap-2 text-center shadow-card">
+              <div>
+                <div class="font-display font-extrabold text-lg sm:text-xl text-inkLight leading-tight">16</div>
+                <div class="text-[11px] font-medium text-emeraldP2 mt-0.5">Tokens</div>
+              </div>
+              <div class="border-l border-borderGreen">
+                <div class="font-display font-extrabold text-lg sm:text-xl text-inkLight leading-tight">15s</div>
+                <div class="text-[11px] font-medium text-emeraldP2 mt-0.5">Timer</div>
+              </div>
+              <div class="border-l border-borderGreen">
+                <div class="font-display font-extrabold text-lg sm:text-xl text-inkLight leading-tight">8</div>
+                <div class="text-[11px] font-medium text-emeraldP2 mt-0.5">Themes</div>
+              </div>
+              <div class="border-l border-borderGreen">
+                <div class="font-display font-extrabold text-lg sm:text-xl text-inkLight leading-tight">100%</div>
+                <div class="text-[11px] font-medium text-emeraldP2 mt-0.5">Offline</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: INTERACTIVE PLAYABLE GAMEPLAY PHONE -->
+          <div class="lg:col-span-6 flex flex-col items-center lg:items-end">
+            <!-- Quick Mode Switcher: 2 Players vs Solo Bot AI -->
+            <div class="mb-2 w-full max-w-[324px] p-1 rounded-2xl bg-card border border-borderGreen grid grid-cols-2 gap-1 shadow-card" role="group" aria-label="Demo Match Mode">
+              <button
+                id="hero-mode-2p"
+                type="button"
+                aria-pressed="true"
+                class="py-2 rounded-xl bg-gold text-inkDark font-display font-extrabold text-xs tracking-wide transition-all cursor-pointer"
+              >
+                2 Players (Pass &amp; Play)
+              </button>
+              <button
+                id="hero-mode-bot"
+                type="button"
+                aria-pressed="false"
+                class="py-2 rounded-xl bg-transparent text-mutedText hover:text-inkLight font-display font-bold text-xs tracking-wide transition-all cursor-pointer"
+              >
+                Play vs Bot AI
+              </button>
+            </div>
+
+            <!-- Live Board Surface Switcher (Emerald Felt / Matte Obsidian / Royal Marble) -->
+            <div class="mb-3 w-full max-w-[324px] flex items-center justify-between gap-1.5 px-1" role="group" aria-label="Live Board Surface">
+              <button
+                type="button"
+                data-surface="emerald"
+                aria-pressed="true"
+                class="surface-btn flex-1 py-1.5 px-2 rounded-xl bg-card border border-gold text-gold font-display font-bold text-[11px] inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              >
+                <span class="w-2.5 h-2.5 rounded-full bg-[#083d28] border border-emeraldP2 shrink-0"></span>
+                <span>Emerald</span>
+              </button>
+              <button
+                type="button"
+                data-surface="obsidian"
+                aria-pressed="false"
+                class="surface-btn flex-1 py-1.5 px-2 rounded-xl bg-card/70 border border-borderGreen text-mutedText hover:text-inkLight font-display font-bold text-[11px] inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              >
+                <span class="w-2.5 h-2.5 rounded-full bg-[#1e2028] border border-white/40 shrink-0"></span>
+                <span>Obsidian</span>
+              </button>
+              <button
+                type="button"
+                data-surface="marble"
+                aria-pressed="false"
+                class="surface-btn flex-1 py-1.5 px-2 rounded-xl bg-card/70 border border-borderGreen text-mutedText hover:text-inkLight font-display font-bold text-[11px] inline-flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              >
+                <span class="w-2.5 h-2.5 rounded-full bg-[#efe7da] border border-gold shrink-0"></span>
+                <span>Marble</span>
+              </button>
+            </div>
+
+            <div class="relative w-full max-w-[324px] rounded-[38px] p-2.5 bg-[#030e0a] border-[2px] border-[#1c4235] shadow-phone">
+              <!-- Top Speaker Notch -->
+              <div class="absolute top-3.5 left-1/2 -translate-x-1/2 w-16 h-1.5 rounded-full bg-[#132920] z-30"></div>
+
+              <!-- Phone Inner Shell (Proportioned 630px Tall, Strict Overflow Hidden) -->
+              <div class="relative w-full h-[630px] flex flex-col rounded-[30px] overflow-hidden bg-[#051a13] border border-borderGreen">
+
+                <!-- TOP BAR (#051a13) -->
+                <div class="shrink-0 flex items-center justify-between px-4 pt-5 pb-3 bg-[#051a13] border-b border-borderGreen/70">
+                  <div class="flex items-center gap-3">
+                    <!-- Speaker Toggle -->
+                    <button id="hero-sound-btn" type="button" class="text-gold hover:text-goldHover transition-colors" title="Toggle Sound" aria-label="Toggle Sound">
+                      <svg id="hero-sound-on" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                        <path d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none" />
+                      </svg>
+                      <svg id="hero-sound-off" class="w-4 h-4 hidden opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor" />
+                        <line x1="22" y1="9" x2="16" y2="15" />
+                        <line x1="16" y1="9" x2="22" y2="15" />
+                      </svg>
+                    </button>
+                    <!-- Vibrate Icon -->
+                    <span class="text-gold" aria-hidden="true">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="7" y="3" width="10" height="18" rx="2" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                    </span>
+                  </div>
+
+                  <!-- Center: Gold Die + QUICK DUEL -->
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-3.5 h-3.5 rounded-[3px] bg-gold flex items-center justify-center shrink-0">
+                      <svg class="w-2.5 h-2.5" viewBox="0 0 12 12" fill="#08140f">
+                        <circle cx="3.2" cy="3.2" r="1.2" />
+                        <circle cx="8.8" cy="3.2" r="1.2" />
+                        <circle cx="6" cy="6" r="1.2" />
+                        <circle cx="3.2" cy="8.8" r="1.2" />
+                        <circle cx="8.8" cy="8.8" r="1.2" />
+                      </svg>
+                    </span>
+                    <span class="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-emeraldP2">QUICK DUEL</span>
+                  </div>
+
+                  <!-- Circular Pause Button (Opens Working Pause Menu Overlay) -->
+                  <button
+                    id="hero-pause-btn"
+                    type="button"
+                    title="Pause Menu"
+                    aria-label="Open Pause Menu"
+                    class="w-7 h-7 rounded-full border border-mutedText/60 hover:border-gold flex items-center justify-center text-inkLight hover:text-gold transition-colors cursor-pointer"
+                  >
+                    <svg class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                      <rect x="4" y="3.5" width="2.5" height="9" rx="1" />
+                      <rect x="9.5" y="3.5" width="2.5" height="9" rx="1" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- EMERALD FELT BOARD (Strict 3-Part Vertical Flex: Top P2 / Middle Controls / Bottom P1) -->
+                <div id="hero-board-surface" class="relative flex-1 min-h-0 emerald-felt-surface px-5 py-5 flex flex-col justify-between overflow-hidden transition-all duration-300">
+
+                  <!-- Crisp Scalable SVG Double-Line Gold Art Deco Stepped-Corner Border -->
+                  <svg class="pointer-events-none absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)]" viewBox="0 0 300 520" preserveAspectRatio="none" fill="none" aria-hidden="true">
+                    <path d="M18 4 H282 V12 H290 V20 H296 V500 H290 V508 H282 V516 H18 V508 H10 V500 H4 V20 H10 V12 H18 Z" stroke="#d4af37" stroke-opacity="0.78" stroke-width="1.5" />
+                    <path d="M23 9 H277 V17 H285 V25 H291 V495 H285 V503 H277 V511 H23 V503 H15 V495 H9 V25 H15 V17 H23 Z" stroke="#d4af37" stroke-opacity="0.45" stroke-width="1" />
+                  </svg>
+
+                  <!-- 1. TOP: PLAYER 2 ZONE (EMERALD STACK) -->
+                  <div id="hero-p2-zone" class="relative z-10 mx-2.5 mt-1 rounded-2xl p-3.5 player-zone-active transition-all duration-300">
+                    <div class="flex items-center justify-center gap-2 mb-2.5">
+                      <span id="hero-p2-dot" class="w-2 h-2 rounded-full bg-gold transition-opacity"></span>
+                      <span id="hero-p2-name" class="font-display font-bold text-sm text-inkLight">Player 2</span>
+                      <span class="w-5 h-5 rounded-full bg-gold/25 border border-gold flex items-center justify-center shrink-0">
+                        <svg class="w-3 h-3 text-gold" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                          <rect x="2" y="2" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                          <circle cx="5.5" cy="5.5" r="1.1" />
+                          <circle cx="10.5" cy="5.5" r="1.1" />
+                          <circle cx="5.5" cy="10.5" r="1.1" />
+                          <circle cx="10.5" cy="10.5" r="1.1" />
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="flex items-center justify-center gap-5">
+                      <!-- Fixed 54px Height Stack Container (Zero Overflow) -->
+                      <div id="hero-p2-stack" class="disc-stack" aria-label="Player 2 Token Stack"></div>
+                      <span id="hero-p2-pill" class="px-3.5 py-1.5 rounded-full bg-gradient-to-b from-[#10b981] to-[#059669] border border-[#6ee7b7]/60 text-white font-display font-extrabold text-xs tracking-wide shadow-md tabular-nums">
+                        8/16
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- 2. MIDDLE CONTROLS (SINGLE INSTANCE — ZERO DUPLICATION) -->
+                  <div class="relative z-10 flex flex-col items-center text-center">
+                    <!-- Orange Pill Banner -->
+                    <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#ea580c] to-[#f97316] text-white text-[11px] font-bold shadow-md max-w-full">
+                      <span class="w-4 h-4 rounded-full border border-yellow-200/80 bg-yellow-400/20 flex items-center justify-center text-[9px] font-black text-yellow-100 shrink-0">$</span>
+                      <span id="hero-banner-text" class="truncate">Coin Toss: Player 2 won the toss!</span>
+                    </div>
+
+                    <!-- Dark Emerald Turn Pill -->
+                    <div id="hero-turn-pill" class="mt-2.5 px-5 py-1.5 rounded-full bg-[#06291d] border border-[#10b981] font-display font-bold text-xs text-inkLight shadow-sm">
+                      Player 2's Turn
+                    </div>
+
+                    <!-- 15-Second Countdown Bar -->
+                    <div class="mt-2.5 w-28">
+                      <div class="w-full h-1.5 rounded-full bg-[#092f23] overflow-hidden">
+                        <div id="hero-timer-bar" class="h-full bg-[#10b981] rounded-full transition-all duration-300" style="width: 100%;"></div>
+                      </div>
+                      <div id="hero-timer-text" class="mt-1 font-display font-bold text-[11px] text-[#34d399] tabular-nums">15s</div>
+                    </div>
+
+                    <!-- Interactive Dice Box with Strict 3x3 CSS Grid Gold Pips -->
+                    <button
+                      id="hero-dice-btn"
+                      type="button"
+                      class="mt-2 w-[76px] h-[76px] rounded-2xl bg-[#082d20] hover:bg-[#0c3c2c] border-[1.5px] border-[#1b4d3e] hover:border-gold/75 shadow-lg flex items-center justify-center transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold cursor-pointer"
+                      aria-label="Tap Dice to Roll"
+                    >
+                      <div id="hero-dice-grid" class="dice-grid" aria-hidden="true">
+                        <span class="dice-pip" data-pip="0"></span>
+                        <span class="dice-pip" data-pip="1"></span>
+                        <span class="dice-pip" data-pip="2"></span>
+                        <span class="dice-pip" data-pip="3"></span>
+                        <span class="dice-pip" data-pip="4"></span>
+                        <span class="dice-pip" data-pip="5"></span>
+                        <span class="dice-pip" data-pip="6"></span>
+                        <span class="dice-pip" data-pip="7"></span>
+                        <span class="dice-pip" data-pip="8"></span>
+                      </div>
+                    </button>
+
+                    <!-- Hint -->
+                    <span id="hero-tap-hint" class="mt-2.5 font-display font-bold text-[10px] tracking-[0.16em] uppercase text-[#34d399]">
+                      TAP DICE TO ROLL
+                    </span>
+                  </div>
+
+                  <!-- 3. BOTTOM: PLAYER 1 ZONE (GOLD STACK) -->
+                  <div id="hero-p1-zone" class="relative z-10 mx-2.5 mb-1 rounded-2xl p-3.5 player-zone-idle transition-all duration-300">
+                    <div class="flex items-center justify-center gap-2 mb-2.5">
+                      <span id="hero-p1-dot" class="w-2 h-2 rounded-full bg-gold opacity-0 transition-opacity"></span>
+                      <span class="font-display font-bold text-sm text-inkLight">Player 1</span>
+                      <svg class="w-3.5 h-3.5 text-mutedText/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+                      </svg>
+                    </div>
+                    <div class="flex items-center justify-center gap-5">
+                      <!-- Fixed 54px Height Stack Container (Zero Overflow) -->
+                      <div id="hero-p1-stack" class="disc-stack" aria-label="Player 1 Token Stack"></div>
+                      <span id="hero-p1-pill" class="px-3.5 py-1.5 rounded-full bg-gradient-to-b from-[#fef08a] via-[#facc15] to-[#d97706] border border-[#fef9c3]/70 text-inkDark font-display font-extrabold text-xs tracking-wide shadow-md tabular-nums">
+                        8/16
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- ======================================================= -->
+                  <!-- WORKING INTERACTIVE PAUSE MENU OVERLAY                  -->
+                  <!-- ======================================================= -->
+                  <div id="hero-pause-modal" class="hidden absolute inset-0 z-30 bg-black/75 backdrop-blur-[2px] p-4 flex items-center justify-center">
+                    <div class="w-full rounded-[24px] bg-[#0A291F] border border-[#1a4d3a] p-5 shadow-2xl text-left">
+                      <h3 class="font-display font-bold text-lg text-inkLight text-center tracking-tight">Pause Menu</h3>
+
+                      <!-- Sound SFX & Haptics Toggles -->
+                      <div class="mt-5 space-y-4">
+                        <div class="flex items-center justify-between">
+                          <span class="text-sm font-medium text-inkLight/95">Sound SFX</span>
+                          <button
+                            id="pause-sound-toggle"
+                            type="button"
+                            role="switch"
+                            aria-checked="true"
+                            aria-label="Toggle Sound SFX"
+                            class="relative w-12 h-7 rounded-full bg-gold/45 p-1 flex items-center justify-end transition-colors cursor-pointer"
+                          >
+                            <span class="w-5 h-5 rounded-full bg-gold shadow transition-transform"></span>
+                          </button>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                          <span class="text-sm font-medium text-inkLight/95">Haptics</span>
+                          <button
+                            id="pause-haptics-toggle"
+                            type="button"
+                            role="switch"
+                            aria-checked="true"
+                            aria-label="Toggle Haptics"
+                            class="relative w-12 h-7 rounded-full bg-gold/45 p-1 flex items-center justify-end transition-colors cursor-pointer"
+                          >
+                            <span class="w-5 h-5 rounded-full bg-gold shadow transition-transform"></span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Divider -->
+                      <div class="my-4 border-t border-white/15"></div>
+
+                      <!-- Privacy & Data Safety Link -->
+                      <div class="flex justify-center">
+                        <a
+                          href="https://sites.google.com/view/token-ludo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#34D399] hover:text-emeraldP2 transition-colors"
+                        >
+                          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                          </svg>
+                          <span>Privacy &amp; Data Safety</span>
+                        </a>
+                      </div>
+
+                      <!-- Two Red-Outlined Surrender Buttons -->
+                      <div class="mt-4 grid grid-cols-2 gap-2">
+                        <button
+                          id="pause-surrender-p1"
+                          type="button"
+                          class="py-2 px-2 rounded-full border border-[#EF4444]/85 hover:bg-[#EF4444]/15 text-[#F87171] font-display font-semibold text-[10px] inline-flex items-center justify-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                            <line x1="4" y1="22" x2="4" y2="15" />
+                          </svg>
+                          <span class="truncate">Surrender (P1)</span>
+                        </button>
+                        <button
+                          id="pause-surrender-p2"
+                          type="button"
+                          class="py-2 px-2 rounded-full border border-[#EF4444]/85 hover:bg-[#EF4444]/15 text-[#F87171] font-display font-semibold text-[10px] inline-flex items-center justify-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                            <line x1="4" y1="22" x2="4" y2="15" />
+                          </svg>
+                          <span class="truncate">Surrender (P2)</span>
+                        </button>
+                      </div>
+
+                      <!-- Bottom Right Actions: Exit Match & Resume -->
+                      <div class="mt-5 flex items-center justify-end gap-5">
+                        <button
+                          id="pause-exit-btn"
+                          type="button"
+                          class="font-display font-semibold text-xs text-inkLight/90 hover:text-white transition-colors cursor-pointer"
+                        >
+                          Exit Match
+                        </button>
+                        <button
+                          id="pause-resume-btn"
+                          type="button"
+                          class="font-display font-bold text-xs text-gold hover:text-goldHover transition-colors cursor-pointer"
+                        >
+                          Resume
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ======================================================= -->
+                  <!-- EXACT DARK-ESPRESSO VICTORY MODAL (Triggers at 16/16)   -->
+                  <!-- ======================================================= -->
+                  <div id="hero-victory-modal" class="hidden absolute inset-0 z-30 bg-black/75 backdrop-blur-[2px] p-3 flex items-center justify-center">
+                    <div class="w-full rounded-[22px] bg-espresso border-[1.8px] border-gold p-3.5 shadow-2xl flex flex-col justify-between text-center">
+                      <!-- Inner Share Card -->
+                      <div class="rounded-2xl bg-gradient-to-b from-[#23100e] to-[#110808] border border-gold/35 p-3">
+                        <div class="flex items-center justify-center gap-1.5">
+                          <span class="w-4 h-4 rounded-full border border-gold flex items-center justify-center text-[8px] text-gold font-bold">&#9860;</span>
+                          <span class="font-display font-extrabold text-[11px] tracking-[0.14em] text-inkLight">TOKEN LUDO</span>
+                        </div>
+                        <div class="font-display text-[8px] tracking-[0.18em] text-gold/80 uppercase mt-0.5">16-TOKEN DICE DUEL</div>
+
+                        <!-- Gold Trophy Circle -->
+                        <div class="mt-2.5 mx-auto w-12 h-12 rounded-full bg-gradient-to-b from-[#f7d256] to-[#c9920d] border-2 border-white/80 flex items-center justify-center shadow-gold-cta">
+                          <svg class="w-6 h-6 text-[#2b1407]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                          </svg>
+                        </div>
+
+                        <div class="mt-2 inline-block px-3 py-0.5 rounded-full bg-gold/15 border border-gold/45 font-display font-bold text-[8.5px] tracking-[0.12em] text-gold uppercase">
+                          MATCH WINNER
+                        </div>
+                        <div id="victory-winner-name" class="mt-1 font-display font-black text-base text-inkLight tracking-wide">
+                          PLAYER 1
+                        </div>
+
+                        <!-- Score Box -->
+                        <div class="mt-2 rounded-xl bg-white/[0.04] border border-white/10 py-2 px-3">
+                          <div class="grid grid-cols-3 items-center text-center">
+                            <div>
+                              <div class="text-[8px] font-bold text-gold uppercase">PLAYER 1</div>
+                              <div id="victory-p1-score" class="font-display font-black text-2xl text-inkLight leading-tight">16</div>
+                            </div>
+                            <div class="font-display font-black text-xl text-gold">:</div>
+                            <div>
+                              <div id="victory-p2-label" class="text-[8px] font-bold text-mutedText uppercase">PLAYER 2</div>
+                              <div id="victory-p2-score" class="font-display font-black text-2xl text-mutedText/70 leading-tight">0</div>
+                            </div>
+                          </div>
+                          <div class="mt-1 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#7f1d1d]/75 border border-red-500/40 text-[8.5px] font-bold text-red-200">
+                            <span id="victory-badge-text">&#128293; 16-0 CLEAN SWEEP</span>
+                          </div>
+                        </div>
+
+                        <!-- 3 Mini Stats -->
+                        <div class="mt-2 grid grid-cols-3 gap-1.5">
+                          <div class="rounded-lg bg-white/[0.04] border border-white/10 py-1.5">
+                            <div id="victory-rounds" class="font-display font-extrabold text-xs text-inkLight">12</div>
+                            <div class="text-[7px] font-bold text-mutedText uppercase">ROUNDS</div>
+                          </div>
+                          <div class="rounded-lg bg-white/[0.04] border border-white/10 py-1.5">
+                            <div id="victory-max-steal" class="font-display font-extrabold text-xs text-inkLight">+6</div>
+                            <div class="text-[7px] font-bold text-mutedText uppercase">MAX STEAL</div>
+                          </div>
+                          <div class="rounded-lg bg-white/[0.04] border border-white/10 py-1.5">
+                            <div id="victory-time" class="font-display font-extrabold text-xs text-inkLight">00:24</div>
+                            <div class="text-[7px] font-bold text-mutedText uppercase">TIME</div>
+                          </div>
+                        </div>
+
+                        <!-- Footer Tag inside Card -->
+                        <div class="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-[7.5px] text-mutedText">
+                          <span class="inline-flex items-center gap-1">
+                            <svg class="w-2.5 h-2.5 text-mutedText shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                              <rect x="2" y="2" width="20" height="20" rx="5" />
+                              <circle cx="12" cy="12" r="4.5" />
+                              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+                            </svg>
+                            <span>@tokenludo.game &nbsp;#Tokenludo</span>
+                          </span>
+                          <span class="px-2 py-0.5 rounded bg-gold text-inkDark font-display font-extrabold text-[7px]">PLAY NOW</span>
+                        </div>
+                      </div>
+
+                      <!-- Bottom Action Buttons -->
+                      <div class="mt-2.5 grid grid-cols-2 gap-2">
+                        <button
+                          id="victory-menu-btn"
+                          type="button"
+                          class="py-2 rounded-xl bg-transparent hover:bg-white/5 border border-white/20 font-display font-bold text-[11px] text-inkLight transition-colors"
+                        >
+                          MAIN MENU
+                        </button>
+                        <button
+                          id="victory-rematch-btn"
+                          type="button"
+                          class="py-2 rounded-xl bg-gold hover:bg-goldHover text-inkDark font-display font-extrabold text-[11px] transition-colors shadow-gold-cta"
+                        >
+                          &#8634; REMATCH
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-3 text-xs text-mutedText text-center w-full max-w-[324px]">
+              Interactive live board with sound &mdash; switch <strong class="text-inkLight">2P / Bot AI</strong> or <strong class="text-inkLight">Board Surface</strong> above, tap the dice to roll, or tap <strong class="text-inkLight">||</strong> to pause.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 3. REAL APP SCREENS SHOWCASE                                          -->
+    <!-- ===================================================================== -->
+    <section id="screens" class="py-20 sm:py-28 border-t border-borderGreen bg-surface/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold">Inside the Game</span>
+          <h2 class="mt-2.5 font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-inkLight">
+            Every Screen. Crafted for Instant Duels.
+          </h2>
+          <p class="mt-3.5 text-base text-mutedText leading-relaxed">
+            Clean match controls, emerald felt gameplay, in-match pause &amp; surrender controls, 8 unlockable themes, and share-ready Clean Sweep cards.
+          </p>
+        </div>
+
+        <!-- Centered Flex-Wrap Grid: 3 Full-Sized Phones on Top + 2 Centered on Bottom on Desktop -->
+        <div class="mt-14 flex flex-wrap justify-center gap-8 items-start">
+
+          <!-- =============================================================== -->
+          <!-- SCREEN 1: HOME & MATCH SETUP                                    -->
+          <!-- =============================================================== -->
+          <div class="reveal w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-[300px] flex flex-col items-center">
+            <div class="w-full rounded-[34px] p-2 bg-[#030d0a] border-[1.8px] border-[#1c4235] shadow-card">
+              <div class="w-full rounded-[26px] bg-forest p-3 text-left flex flex-col gap-2.5 overflow-hidden select-none">
+
+                <!-- Header Card with NEW Official Token Ludo 3D App Icon -->
+                <div class="rounded-2xl bg-card border border-borderGreen p-2.5 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="relative w-9 h-9 rounded-[10px] overflow-hidden shrink-0 shadow-sm">
+                      <img
+                        src="assets/app_icon.jpg"
+                        alt="Token Ludo Icon"
+                        class="w-full h-full object-cover"
+                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                      />
+                      <svg class="hidden w-full h-full" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                        <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#navIconBg)" stroke="url(#navIconGold)" stroke-width="3.4" />
+                        <rect x="5" y="5" width="54" height="54" rx="11" fill="url(#navIconGlow)" />
+                        <rect x="9" y="37" width="13.5" height="4.2" rx="1.6" fill="#0E7490" />
+                        <rect x="9" y="33" width="13.5" height="4.2" rx="1.6" fill="#0891B2" />
+                        <rect x="9" y="29" width="13.5" height="4.2" rx="1.6" fill="#06B6D4" />
+                        <rect x="9" y="25" width="13.5" height="4.2" rx="1.6" fill="#22D3EE" />
+                        <rect x="41.5" y="37" width="13.5" height="4.2" rx="1.6" fill="#991B1B" />
+                        <rect x="41.5" y="33" width="13.5" height="4.2" rx="1.6" fill="#DC2626" />
+                        <rect x="41.5" y="29" width="13.5" height="4.2" rx="1.6" fill="#EF4444" />
+                        <rect x="41.5" y="25" width="13.5" height="4.2" rx="1.6" fill="#F97316" />
+                        <polygon points="32,16 46,23 32,30 18,23" fill="#FFFFFF" />
+                        <polygon points="18,23 32,30 32,46 18,39" fill="#E4E4E7" />
+                        <polygon points="46,23 32,30 32,46 46,39" fill="#D4D4D8" />
+                        <circle cx="32" cy="20.4" r="1.7" fill="#DC2626" />
+                        <circle cx="26.4" cy="23" r="1.7" fill="#DC2626" />
+                        <circle cx="37.6" cy="23" r="1.7" fill="#DC2626" />
+                        <circle cx="32" cy="25.6" r="1.7" fill="#DC2626" />
+                        <circle cx="21.8" cy="28.3" r="1.4" fill="#7E22CE" />
+                        <circle cx="21.8" cy="32.8" r="1.4" fill="#7E22CE" />
+                        <circle cx="21.8" cy="37.3" r="1.4" fill="#7E22CE" />
+                        <circle cx="27.5" cy="31.1" r="1.4" fill="#7E22CE" />
+                        <circle cx="27.5" cy="35.6" r="1.4" fill="#7E22CE" />
+                        <circle cx="27.5" cy="40.1" r="1.4" fill="#7E22CE" />
+                        <circle cx="36" cy="32" r="1.4" fill="#DC2626" />
+                        <circle cx="42" cy="29" r="1.4" fill="#DC2626" />
+                        <circle cx="39" cy="35" r="1.4" fill="#DC2626" />
+                        <circle cx="36" cy="40.5" r="1.4" fill="#DC2626" />
+                        <circle cx="42" cy="37.5" r="1.4" fill="#DC2626" />
+                      </svg>
+                    </span>
+                    <div class="min-w-0">
+                      <div class="font-display font-extrabold text-[13px] text-inkLight leading-tight truncate">TOKEN LUDO</div>
+                      <div class="text-[8.5px] font-medium text-emeraldP2 truncate">16-Token Zero-Sum Dice Duel</div>
+                    </div>
+                  </div>
+                  <span class="w-5 h-5 rounded-full border border-gold text-gold text-[10px] font-bold flex items-center justify-center shrink-0">?</span>
+                </div>
+
+                <!-- 4-Column Stats Bar -->
+                <div class="rounded-xl bg-card border border-borderGreen px-1.5 py-2 grid grid-cols-4 text-center gap-1">
+                  <div>
+                    <div class="font-display font-bold text-[11px] text-inkLight leading-tight">13</div>
+                    <div class="text-[6.8px] text-emeraldP2 leading-tight mt-0.5">Duels / Series</div>
+                  </div>
+                  <div>
+                    <div class="font-display font-bold text-[11px] text-inkLight leading-tight">3 : 10</div>
+                    <div class="text-[6.8px] text-emeraldP2 leading-tight mt-0.5">W : L</div>
+                  </div>
+                  <div>
+                    <div class="font-display font-bold text-[11px] text-inkLight leading-tight">6</div>
+                    <div class="text-[6.8px] text-emeraldP2 leading-tight mt-0.5">Max Steal</div>
+                  </div>
+                  <div>
+                    <div class="font-display font-bold text-[11px] text-inkLight leading-tight">1</div>
+                    <div class="text-[6.8px] text-emeraldP2 leading-tight mt-0.5">Overshoots</div>
+                  </div>
+                </div>
+
+                <!-- Mode & Start Duel Card -->
+                <div class="rounded-2xl bg-card border border-borderGreen p-2.5 space-y-2">
+                  <div class="grid grid-cols-2 gap-1.5 text-[10px] font-display font-bold text-center">
+                    <div class="py-1.5 rounded-lg bg-surface border border-borderGreen text-inkLight/90">Play vs Bot</div>
+                    <div class="py-1.5 rounded-lg bg-gold text-inkDark">2 Players</div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-1.5 text-[8.5px] font-display font-bold text-center">
+                    <div class="py-1.5 rounded-lg bg-gold text-inkDark">Quick Duel</div>
+                    <div class="py-1.5 rounded-lg bg-surface border border-borderGreen text-mutedText">Best of 3</div>
+                    <div class="py-1.5 rounded-lg bg-surface border border-borderGreen text-mutedText">Best of 5</div>
+                  </div>
+                  <div class="w-full py-2.5 rounded-xl bg-gold text-inkDark font-display font-black text-xs text-center tracking-wide shadow-sm">
+                    &#9654; START DUEL
+                  </div>
+                </div>
+
+                <!-- Players & Match Controls Card -->
+                <div class="rounded-2xl bg-card border border-borderGreen p-2.5 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="min-w-0">
+                      <div class="font-display font-bold text-[10px] text-inkLight">Players &amp; Match Controls</div>
+                      <div class="text-[7.5px] text-emeraldP2 truncate">Player 1 vs Player 2 &bull; Quick Duel &bull; 15s</div>
+                    </div>
+                    <span class="text-emeraldP2 text-[10px] shrink-0">&#9650;</span>
+                  </div>
+
+                  <!-- Player Inputs -->
+                  <div class="space-y-1.5">
+                    <div class="rounded-lg bg-surface border border-borderGreen px-2.5 py-1.5">
+                      <div class="text-[7px] text-emeraldP2">Player 1 Name</div>
+                      <div class="text-[10px] text-inkLight font-medium">Player 1</div>
+                    </div>
+                    <div class="rounded-lg bg-surface border border-borderGreen px-2.5 py-1.5">
+                      <div class="text-[7px] text-emeraldP2">Player 2 Name</div>
+                      <div class="text-[10px] text-inkLight font-medium">Player 2</div>
+                    </div>
+                  </div>
+
+                  <!-- Toggles -->
+                  <div class="flex items-center justify-between text-[9px] text-inkLight/90 pt-0.5">
+                    <span>15-Second Turn Timer</span>
+                    <span class="w-7 h-4 rounded-full bg-gold/40 p-0.5 flex justify-end shrink-0"><span class="w-3 h-3 rounded-full bg-gold"></span></span>
+                  </div>
+                  <div class="flex items-center justify-between text-[9px] text-inkLight/90">
+                    <span>Coin Toss First Turn</span>
+                    <span class="w-7 h-4 rounded-full bg-gold/40 p-0.5 flex justify-end shrink-0"><span class="w-3 h-3 rounded-full bg-gold"></span></span>
+                  </div>
+
+                  <!-- Dice Box Position -->
+                  <div>
+                    <div class="text-[8.5px] font-bold text-inkLight mb-1">Dice Box Position:</div>
+                    <div class="grid grid-cols-3 rounded-full overflow-hidden border border-borderGreen text-[8.5px] font-display font-bold text-center">
+                      <div class="py-1 text-inkLight/80">Left</div>
+                      <div class="py-1 bg-gold text-inkDark">Center</div>
+                      <div class="py-1 text-inkLight/80">Right</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Themes & History + Bottom Action Icons -->
+                <div class="space-y-2">
+                  <div class="grid grid-cols-2 gap-2 text-[10px] font-display font-bold text-center">
+                    <div class="py-1.5 rounded-xl bg-card border border-borderGreen text-inkLight">Themes</div>
+                    <div class="py-1.5 rounded-xl bg-card border border-borderGreen text-inkLight">History</div>
+                  </div>
+                  <div class="flex items-center justify-between px-0.5 text-[7.5px] text-emeraldP2">
+                    <div class="flex items-center gap-1.5">
+                      <!-- Email Circle -->
+                      <span class="w-5 h-5 rounded-full bg-[#2a2216] border border-gold/45 text-gold flex items-center justify-center shrink-0">
+                        <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="2" y="4" width="20" height="16" rx="2" />
+                          <path d="M22 6l-10 7L2 6" />
+                        </svg>
+                      </span>
+                      <!-- Official Instagram Gradient Logo -->
+                      <span class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 shadow-sm" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+                        <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="3" y="3" width="18" height="18" rx="5" />
+                          <circle cx="12" cy="12" r="4" />
+                          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+                        </svg>
+                      </span>
+                      <!-- Official X Logo -->
+                      <span class="w-5 h-5 rounded-full bg-[#11181c] border border-white/25 text-white flex items-center justify-center shrink-0">
+                        <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                      </span>
+                    </div>
+                    <span class="inline-flex items-center gap-0.5 font-medium">
+                      <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                      <span>Rate App</span>
+                    </span>
+                    <span class="inline-flex items-center gap-0.5 font-medium">
+                      <svg class="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                      <span>Privacy Policy</span>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <h3 class="mt-4 font-display font-bold text-base text-inkLight">1. Home &amp; Match Setup</h3>
+            <p class="mt-1 text-xs text-mutedText text-center">Bot or 2P, series, 15s timer &amp; dice side</p>
+          </div>
+
+          <!-- =============================================================== -->
+          <!-- SCREEN 2: LIVE EMERALD FELT DUEL                                -->
+          <!-- =============================================================== -->
+          <div class="reveal w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-[300px] flex flex-col items-center">
+            <div class="w-full rounded-[34px] p-2 bg-[#030d0a] border-[1.8px] border-gold/55 shadow-card">
+              <div class="w-full rounded-[26px] bg-[#051a13] overflow-hidden flex flex-col select-none">
+
+                <!-- Top HUD (Exact Gold SVG Icons + QUICK DUEL + Circular Pause) -->
+                <div class="flex items-center justify-between px-3.5 py-3 bg-[#051a13] border-b border-borderGreen/70">
+                  <div class="flex items-center gap-2.5 text-gold">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                      <path d="M15.5 8.5a5 5 0 010 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+                    </svg>
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="7" y="3" width="10" height="18" rx="2" />
+                      <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-display font-bold text-[10px] tracking-[0.12em] text-emeraldP2">
+                    <span class="w-3 h-3 rounded-[2.5px] bg-gold flex items-center justify-center shrink-0">
+                      <svg class="w-2 h-2" viewBox="0 0 12 12" fill="#08140f" aria-hidden="true">
+                        <circle cx="3.2" cy="3.2" r="1.2" />
+                        <circle cx="8.8" cy="3.2" r="1.2" />
+                        <circle cx="6" cy="6" r="1.2" />
+                        <circle cx="3.2" cy="8.8" r="1.2" />
+                        <circle cx="8.8" cy="8.8" r="1.2" />
+                      </svg>
+                    </span>
+                    <span>QUICK DUEL</span>
+                  </div>
+                  <span class="w-5 h-5 rounded-full border border-mutedText/70 text-inkLight flex items-center justify-center shrink-0">
+                    <svg class="w-2.5 h-2.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <rect x="4" y="3.5" width="2.5" height="9" rx="1" />
+                      <rect x="9.5" y="3.5" width="2.5" height="9" rx="1" />
+                    </svg>
+                  </span>
+                </div>
+
+                <!-- Emerald Felt Board -->
+                <div class="relative emerald-felt-surface px-4 py-5 flex flex-col justify-between gap-6">
+                  <!-- Crisp Scalable SVG Double-Line Gold Art Deco Stepped-Corner Frame -->
+                  <svg class="pointer-events-none absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)]" viewBox="0 0 260 480" preserveAspectRatio="none" fill="none" aria-hidden="true">
+                    <path d="M16 4 H244 V11 H251 V18 H256 V462 H251 V469 H244 V476 H16 V469 H9 V462 H4 V18 H9 V11 H16 Z" stroke="#d4af37" stroke-opacity="0.78" stroke-width="1.4" />
+                    <path d="M21 9 H239 V16 H246 V23 H251 V457 H246 V464 H239 V471 H21 V464 H14 V457 H9 V23 H14 V16 H21 Z" stroke="#d4af37" stroke-opacity="0.45" stroke-width="0.9" />
+                  </svg>
+
+                  <!-- Top P2 Active Glowing Card -->
+                  <div class="relative z-10 mx-2.5 rounded-2xl p-3 player-zone-active">
+                    <div class="flex items-center justify-center gap-1.5 mb-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                      <span class="font-display font-bold text-xs text-inkLight">Player 2</span>
+                      <span class="w-4 h-4 rounded-full bg-gold/25 border border-gold flex items-center justify-center shrink-0">
+                        <svg class="w-2.5 h-2.5 text-gold" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                          <rect x="2" y="2" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                          <circle cx="5.5" cy="5.5" r="1.2" />
+                          <circle cx="10.5" cy="5.5" r="1.2" />
+                          <circle cx="5.5" cy="10.5" r="1.2" />
+                          <circle cx="10.5" cy="10.5" r="1.2" />
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="flex items-center justify-center gap-4">
+                      <!-- 8 Emerald Stacked Discs (Absolute Positioned, Zero Overflow) -->
+                      <div class="disc-stack-sm">
+                        <div class="token-disc-sm disc-p2" style="bottom:0px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:4px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:8px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:12px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:16px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:20px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:24px;"></div>
+                        <div class="token-disc-sm disc-p2 disc-p2-top" style="bottom:28px;"></div>
+                      </div>
+                      <span class="px-3 py-1 rounded-full bg-gradient-to-b from-[#10b981] to-[#059669] border border-[#6ee7b7]/60 text-white font-display font-extrabold text-[11px] shadow">8/16</span>
+                    </div>
+                  </div>
+
+                  <!-- Center Coin Toss + Turn + 15s + Gold-Pip Die -->
+                  <div class="relative z-10 flex flex-col items-center text-center my-2">
+                    <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-[#ea580c] to-[#f97316] text-white text-[9px] font-bold shadow">
+                      <span class="w-3.5 h-3.5 rounded-full border border-yellow-200/80 bg-yellow-400/20 flex items-center justify-center text-[8px] font-black text-yellow-100 shrink-0">$</span>
+                      <span>Coin Toss: Player 2 won the toss!</span>
+                    </div>
+                    <div class="mt-2.5 px-4 py-1 rounded-full bg-[#06291d] border border-[#10b981] font-display font-bold text-[10px] text-inkLight">
+                      Player 2's Turn
+                    </div>
+                    <div class="mt-2.5 w-24 h-1.5 rounded-full bg-[#10b981]"></div>
+                    <div class="mt-1 font-display font-bold text-[10px] text-[#34d399]">15s</div>
+                    <!-- Dark Emerald Die with Centered Bright Gold Pip -->
+                    <div class="mt-2 w-[68px] h-[68px] rounded-2xl bg-[#082d20] border border-[#1b4d3e] flex items-center justify-center shadow-lg">
+                      <span class="w-3 h-3 rounded-full bg-[#facc15] shadow-[0_0_8px_rgba(250,204,21,0.55)]"></span>
+                    </div>
+                    <div class="mt-2.5 font-display font-bold text-[9px] tracking-[0.14em] uppercase text-[#34d399]">
+                      TAP DICE TO ROLL
+                    </div>
+                  </div>
+
+                  <!-- Bottom P1 Idle Card -->
+                  <div class="relative z-10 mx-2.5 rounded-2xl p-3 player-zone-idle">
+                    <div class="flex items-center justify-center gap-1.5 mb-2">
+                      <span class="font-display font-bold text-xs text-inkLight">Player 1</span>
+                      <svg class="w-3 h-3 text-mutedText/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+                      </svg>
+                    </div>
+                    <div class="flex items-center justify-center gap-4">
+                      <!-- 8 Gold Stacked Discs (Absolute Positioned, Zero Overflow) -->
+                      <div class="disc-stack-sm">
+                        <div class="token-disc-sm disc-p1" style="bottom:0px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:4px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:8px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:12px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:16px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:20px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:24px;"></div>
+                        <div class="token-disc-sm disc-p1 disc-p1-top" style="bottom:28px;"></div>
+                      </div>
+                      <span class="px-3 py-1 rounded-full bg-gradient-to-b from-[#fef08a] via-[#facc15] to-[#d97706] border border-[#fef9c3]/70 text-inkDark font-display font-extrabold text-[11px] shadow">8/16</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <h3 class="mt-4 font-display font-bold text-base text-inkLight">2. Live Emerald Felt Duel</h3>
+            <p class="mt-1 text-xs text-mutedText text-center">Zero-sum 8 vs 8 duel with 15s turn bar</p>
+          </div>
+
+          <!-- =============================================================== -->
+          <!-- SCREEN 3: PAUSE MENU & CONTROLS (NEWLY ADDED REAL SCREEN)       -->
+          <!-- =============================================================== -->
+          <div class="reveal w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-[300px] flex flex-col items-center">
+            <div class="w-full rounded-[34px] p-2 bg-[#030d0a] border-[1.8px] border-[#1c4235] shadow-card">
+              <div class="relative w-full rounded-[26px] bg-[#04140e] overflow-hidden flex flex-col select-none">
+
+                <!-- Dimmed Top HUD -->
+                <div class="flex items-center justify-between px-3.5 py-3 bg-[#04140e] border-b border-borderGreen/40 opacity-50">
+                  <div class="flex items-center gap-2.5 text-gold">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                      <path d="M15.5 8.5a5 5 0 010 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+                    </svg>
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="7" y="3" width="10" height="18" rx="2" />
+                    </svg>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-display font-bold text-[10px] tracking-[0.12em] text-emeraldP2">
+                    <span class="w-3 h-3 rounded-[2.5px] bg-gold flex items-center justify-center shrink-0"></span>
+                    <span>QUICK DUEL</span>
+                  </div>
+                  <span class="w-5 h-5 rounded-full border border-mutedText/70 text-inkLight flex items-center justify-center shrink-0">
+                    <svg class="w-2.5 h-2.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <rect x="4" y="3.5" width="2.5" height="9" rx="1" />
+                      <rect x="9.5" y="3.5" width="2.5" height="9" rx="1" />
+                    </svg>
+                  </span>
+                </div>
+
+                <!-- Dimmed Emerald Felt Board Behind Modal -->
+                <div class="relative emerald-felt-surface px-3.5 py-4 flex flex-col justify-between gap-4">
+                  <!-- Dimmed Art Deco Frame -->
+                  <svg class="pointer-events-none absolute inset-1.5 w-[calc(100%-12px)] h-[calc(100%-12px)] opacity-45" viewBox="0 0 260 480" preserveAspectRatio="none" fill="none" aria-hidden="true">
+                    <path d="M16 4 H244 V11 H251 V18 H256 V462 H251 V469 H244 V476 H16 V469 H9 V462 H4 V18 H9 V11 H16 Z" stroke="#d4af37" stroke-opacity="0.7" stroke-width="1.4" />
+                    <path d="M21 9 H239 V16 H246 V23 H251 V457 H246 V464 H239 V471 H21 V464 H14 V457 H9 V23 H14 V16 H21 Z" stroke="#d4af37" stroke-opacity="0.4" stroke-width="0.9" />
+                  </svg>
+
+                  <!-- Dimmed Top P2 Card -->
+                  <div class="relative z-0 mx-3 rounded-2xl p-2.5 player-zone-active opacity-40">
+                    <div class="flex items-center justify-center gap-1.5 mb-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                      <span class="font-display font-bold text-[11px] text-inkLight">Player 2</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3">
+                      <div class="disc-stack-sm">
+                        <div class="token-disc-sm disc-p2" style="bottom:0px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:5px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:10px;"></div>
+                        <div class="token-disc-sm disc-p2" style="bottom:15px;"></div>
+                        <div class="token-disc-sm disc-p2 disc-p2-top" style="bottom:20px;"></div>
+                      </div>
+                      <span class="px-2.5 py-0.5 rounded-full bg-[#059669] text-white font-display font-bold text-[10px]">8/16</span>
+                    </div>
+                  </div>
+
+                  <!-- Foreground Dark Emerald Pause Menu Modal (#0A291F) -->
+                  <div class="relative z-20 rounded-[22px] bg-[#0A291F] border border-[#1a4d3a] px-4 py-4 shadow-2xl text-left">
+                    <div class="font-display font-bold text-[15px] text-inkLight text-center">Pause Menu</div>
+
+                    <!-- Sound SFX & Haptics Rows -->
+                    <div class="mt-4 space-y-3">
+                      <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-medium text-inkLight/95">Sound SFX</span>
+                        <span class="w-10 h-[22px] rounded-full bg-gold/45 p-0.5 flex items-center justify-end shrink-0">
+                          <span class="w-4 h-4 rounded-full bg-gold shadow-sm"></span>
+                        </span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-medium text-inkLight/95">Haptics</span>
+                        <span class="w-10 h-[22px] rounded-full bg-gold/45 p-0.5 flex items-center justify-end shrink-0">
+                          <span class="w-4 h-4 rounded-full bg-gold shadow-sm"></span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="my-3.5 border-t border-white/15"></div>
+
+                    <!-- Privacy & Data Safety -->
+                    <div class="flex items-center justify-center gap-1.5 text-[10px] font-semibold text-[#34D399]">
+                      <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                      <span>Privacy &amp; Data Safety</span>
+                    </div>
+
+                    <!-- Two Side-by-Side Red-Outlined Surrender Buttons -->
+                    <div class="mt-3.5 grid grid-cols-2 gap-1.5">
+                      <div class="py-1.5 px-1.5 rounded-full border border-[#EF4444]/85 text-[#F87171] font-display font-semibold text-[8.2px] inline-flex items-center justify-center gap-1">
+                        <svg class="w-2.5 h-2.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                          <line x1="4" y1="22" x2="4" y2="15" />
+                        </svg>
+                        <span class="truncate">Surrender (Player 1)</span>
+                      </div>
+                      <div class="py-1.5 px-1.5 rounded-full border border-[#EF4444]/85 text-[#F87171] font-display font-semibold text-[8.2px] inline-flex items-center justify-center gap-1">
+                        <svg class="w-2.5 h-2.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                          <line x1="4" y1="22" x2="4" y2="15" />
+                        </svg>
+                        <span class="truncate">Surrender (Player 2)</span>
+                      </div>
+                    </div>
+
+                    <!-- Bottom Right Exit Match + Resume -->
+                    <div class="mt-4 flex items-center justify-end gap-4 text-[10.5px] font-display">
+                      <span class="font-semibold text-inkLight/90">Exit Match</span>
+                      <span class="font-bold text-gold">Resume</span>
+                    </div>
+                  </div>
+
+                  <!-- Dimmed Bottom P1 Card -->
+                  <div class="relative z-0 mx-3 rounded-2xl p-2.5 player-zone-idle opacity-40">
+                    <div class="flex items-center justify-center gap-1.5 mb-1.5">
+                      <span class="font-display font-bold text-[11px] text-inkLight">Player 1</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3">
+                      <div class="disc-stack-sm">
+                        <div class="token-disc-sm disc-p1" style="bottom:0px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:5px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:10px;"></div>
+                        <div class="token-disc-sm disc-p1" style="bottom:15px;"></div>
+                        <div class="token-disc-sm disc-p1 disc-p1-top" style="bottom:20px;"></div>
+                      </div>
+                      <span class="px-2.5 py-0.5 rounded-full bg-gold text-inkDark font-display font-bold text-[10px]">8/16</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <h3 class="mt-4 font-display font-bold text-base text-inkLight">3. Pause Menu &amp; Controls</h3>
+            <p class="mt-1 text-xs text-mutedText text-center">Sound, haptics, privacy &amp; instant surrender</p>
+          </div>
+
+          <!-- =============================================================== -->
+          <!-- SCREEN 4: THEMES CATALOG & PROGRESSION                          -->
+          <!-- =============================================================== -->
+          <div class="reveal w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-[300px] flex flex-col items-center">
+            <div class="w-full rounded-[34px] p-2 bg-[#030d0a] border-[1.8px] border-[#1c4235] shadow-card">
+              <div class="w-full rounded-[26px] bg-forest p-3 text-left flex flex-col gap-2.5 overflow-hidden select-none">
+
+                <!-- Header -->
+                <div class="flex items-center gap-2 pt-0.5 text-inkLight">
+                  <span class="text-sm font-bold shrink-0">&larr;</span>
+                  <span class="font-display font-semibold text-[12px] tracking-tight truncate">Themes Catalog &amp; Progression</span>
+                </div>
+
+                <!-- Board Surface Row (Exact 4 Distinct Tiles, Zero Overflow) -->
+                <div>
+                  <div class="flex items-center justify-between text-[9.5px] mb-1.5">
+                    <span class="font-display font-bold text-inkLight">Board Surface</span>
+                    <span class="font-display font-bold text-gold">Classic Default</span>
+                  </div>
+                  <div class="grid grid-cols-4 gap-[6px]">
+                    <!-- Tile A: Classic Default (Selected) -->
+                    <div class="relative rounded-xl bg-[#141c24] border-2 border-gold h-[62px] overflow-hidden flex flex-col items-center justify-between p-1">
+                      <!-- Gold Checkmark Badge -->
+                      <span class="absolute top-1 right-1 w-3.5 h-3.5 rounded-full bg-gold flex items-center justify-center">
+                        <svg class="w-2 h-2 text-[#141c24]" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="3 8.5 6.5 12 13 4.5" />
+                        </svg>
+                      </span>
+                      <!-- Center 2x2 Rounded Squares Grid SVG -->
+                      <svg class="w-4 h-4 text-[#94a3b8] mt-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <rect x="2" y="2" width="7" height="7" rx="1.8" />
+                        <rect x="11" y="2" width="7" height="7" rx="1.8" />
+                        <rect x="2" y="11" width="7" height="7" rx="1.8" />
+                        <rect x="11" y="11" width="7" height="7" rx="1.8" />
+                      </svg>
+                      <span class="font-display font-bold text-[6.5px] text-gold truncate w-full text-center leading-tight">Classic Defa...</span>
+                    </div>
+
+                    <!-- Tile B: Emerald Felt -->
+                    <div class="relative rounded-xl border border-[#1a4d3a] h-[62px] overflow-hidden flex flex-col justify-between p-1" style="background: radial-gradient(circle at 50% 45%, #0b4a32 0%, #042216 100%);">
+                      <span class="self-start px-1 py-[1px] rounded bg-[#031c12]/85 border border-emeraldP2/30 text-[#34d399] font-bold text-[5.8px] leading-tight">7d left</span>
+                      <span class="font-display font-bold text-[6.5px] text-white truncate w-full text-center leading-tight">Emerald Felt</span>
+                    </div>
+
+                    <!-- Tile C: Matte Obsidian -->
+                    <div class="relative rounded-xl border border-white/15 h-[62px] overflow-hidden flex flex-col justify-between p-1" style="background: linear-gradient(160deg, #1e2028 0%, #101218 100%);">
+                      <!-- Subtle Thin Inner Gold Frame -->
+                      <span class="pointer-events-none absolute inset-[3px] rounded-[8px] border border-gold/30"></span>
+                      <span class="relative z-10 self-start px-1 py-[1px] rounded bg-black/75 border border-emeraldP2/30 text-[#34d399] font-bold text-[5.8px] leading-tight">7d left</span>
+                      <span class="relative z-10 font-display font-bold text-[6.5px] text-white truncate w-full text-center leading-tight">Matte Obsidian</span>
+                    </div>
+
+                    <!-- Tile D: Royal Marble -->
+                    <div class="relative rounded-xl marble-surface border border-gold/45 h-[62px] overflow-hidden flex flex-col justify-between">
+                      <div class="p-1">
+                        <span class="inline-flex items-center gap-0.5 px-1 py-[1px] rounded bg-black/80 text-gold font-bold text-[5.8px] leading-tight">
+                          <svg class="w-2 h-2 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M17 10h-1V7a4 4 0 00-8 0v3H7a2 2 0 00-2 2v7a2 2 0 002 2h10a2 2 0 002-2v-7a2 2 0 00-2-2zm-7-3a2 2 0 114 0v3h-4V7z" />
+                          </svg>
+                          <span>0/3</span>
+                        </span>
+                      </div>
+                      <!-- Bottom Dark Scrim for Crisp Legible White Label -->
+                      <div class="w-full px-1 py-1 bg-gradient-to-t from-black/80 via-black/55 to-transparent text-center">
+                        <span class="block font-display font-bold text-[6.5px] text-white truncate leading-tight">Royal Marble</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="grid grid-cols-3 gap-1.5 text-[9px] font-display font-bold text-center">
+                  <div class="py-1.5 rounded-lg bg-gold text-inkDark">ALL (8)</div>
+                  <div class="py-1.5 rounded-lg bg-card border border-borderGreen text-inkLight">LIGHT (4)</div>
+                  <div class="py-1.5 rounded-lg bg-card border border-borderGreen text-inkLight">DARK (4)</div>
+                </div>
+
+                <!-- Light Theme Card 1: Royal Heritage -->
+                <div class="rounded-2xl bg-[#FFF4EB] p-2.5 text-[#3b0d14]">
+                  <div class="flex items-center justify-between gap-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="font-display font-extrabold text-[10.5px] truncate">Royal Heritage</span>
+                      <span class="px-1.5 py-0.5 rounded bg-[#fef3c7] border border-[#f59e0b]/45 text-[#b45309] text-[6px] font-bold shrink-0">LIGHT</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-[#16a34a] text-white text-[6.5px] font-bold shrink-0">UNLOCKED</span>
+                  </div>
+                  <p class="text-[7.5px] text-[#7f1d1d] mt-0.5">Classic crimson velvet with gold filigree &amp; ivory accents</p>
+                  <div class="mt-2 flex items-center justify-around">
+                    <div class="flex flex-col items-center gap-0.5">
+                      <span class="w-9 h-3.5 rounded-full bg-gradient-to-r from-[#7f1d1d] to-[#b91c1c]"></span>
+                      <span class="text-[6px] text-[#7f1d1d]/75">P1 Token</span>
+                    </div>
+                    <span class="w-7 h-7 rounded-lg bg-[#881337] border-[1.5px] border-gold flex items-center justify-center shadow-sm"><span class="w-2 h-2 rounded-full bg-gold"></span></span>
+                    <div class="flex flex-col items-center gap-0.5">
+                      <span class="w-9 h-3.5 rounded-full bg-gradient-to-r from-[#fde047] to-[#ca8a04]"></span>
+                      <span class="text-[6px] text-[#7f1d1d]/75">P2 Token</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Light Theme Card 2: Soft Mint Pastel -->
+                <div class="rounded-2xl bg-[#EBF9F3] p-2.5 text-[#064e3b]">
+                  <div class="flex items-center justify-between gap-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="font-display font-extrabold text-[10.5px] truncate">Soft Mint Pastel</span>
+                      <span class="px-1.5 py-0.5 rounded bg-[#fef3c7] border border-[#f59e0b]/45 text-[#b45309] text-[6px] font-bold shrink-0">LIGHT</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-[#16a34a] text-white text-[6.5px] font-bold shrink-0">UNLOCKED</span>
+                  </div>
+                  <p class="text-[7.5px] text-[#047857] mt-0.5">Matte mint green with soft peach &amp; sage accents</p>
+                  <div class="mt-2 flex items-center justify-around">
+                    <div class="flex flex-col items-center gap-0.5">
+                      <span class="w-9 h-3.5 rounded-full bg-gradient-to-r from-[#14b8a6] to-[#0f766e]"></span>
+                      <span class="text-[6px] text-[#047857]/75">P1 Token</span>
+                    </div>
+                    <span class="w-7 h-7 rounded-lg bg-white border-[1.5px] border-[#14b8a6]/55 flex items-center justify-center shadow-sm"><span class="w-2 h-2 rounded-full bg-[#0f766e]"></span></span>
+                    <div class="flex flex-col items-center gap-0.5">
+                      <span class="w-9 h-3.5 rounded-full bg-gradient-to-r from-[#fda4af] to-[#fb923c]"></span>
+                      <span class="text-[6px] text-[#047857]/75">P2 Token</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Light Theme Card 3: Retro Boardwalk -->
+                <div class="rounded-2xl bg-[#FBF3E4] p-2.5 text-[#431407]">
+                  <div class="flex items-center justify-between gap-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                      <span class="font-display font-extrabold text-[10.5px] truncate">Retro Boardwalk</span>
+                      <span class="px-1.5 py-0.5 rounded bg-[#fef3c7] border border-[#f59e0b]/45 text-[#b45309] text-[6px] font-bold shrink-0">LIGHT</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-[#16a34a] text-white text-[6.5px] font-bold shrink-0">UNLOCKED</span>
+                  </div>
+                  <p class="text-[7.5px] text-[#7c2d12] mt-0.5">Warm wood finish with cherry red &amp; indigo tokens</p>
+                  <div class="mt-2 flex items-center justify-around">
+                    <div class="flex flex-col items-center gap-0.5">
+                      <span class="w-9 h-3.5 rounded-full bg-gradient-to-r from-[#ef4444] to-[#b91c1c]"></span>
+                      <span class="text-[6px] text-[#7c2d12]/75">P1 Token</span>
+                    </div>
+                    <span class="w-7 h-7 rounded-lg bg-[#fff7ed] border-[1.5px] border-[#d97706]/45 flex items-center justify-center shadow-sm"><span class="w-2 h-2 rounded-full bg-[#1e293b]"></span></span>
+                    <div class="flex flex-col items-center gap-0.5">
+                      <span class="w-9 h-3.5 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#1d4ed8]"></span>
+                      <span class="text-[6px] text-[#7c2d12]/75">P2 Token</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <h3 class="mt-4 font-display font-bold text-base text-inkLight">4. Themes Catalog &amp; Surfaces</h3>
+            <p class="mt-1 text-xs text-mutedText text-center">8 Light &amp; Dark palettes + 4 board surfaces</p>
+          </div>
+
+          <!-- =============================================================== -->
+          <!-- SCREEN 5: MATCH WINNER SHARE CARD                               -->
+          <!-- =============================================================== -->
+          <div class="reveal w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-[300px] flex flex-col items-center">
+            <div class="w-full rounded-[34px] p-2 bg-[#030d0a] border-[1.8px] border-gold/55 shadow-card">
+              <div class="relative w-full rounded-[26px] bg-[#041710] p-2.5 overflow-hidden flex flex-col justify-between select-none">
+
+                <!-- Confetti Dots -->
+                <div class="pointer-events-none absolute inset-x-0 top-0 h-16 overflow-hidden" aria-hidden="true">
+                  <span class="absolute top-3 left-6 w-2 h-3 bg-emeraldP2 rotate-12 rounded-[1px]"></span>
+                  <span class="absolute top-6 left-16 w-2.5 h-1.5 bg-pink-500 -rotate-45 rounded-[1px]"></span>
+                  <span class="absolute top-2 left-32 w-2 h-2 bg-cyan-400 rotate-45 rounded-[1px]"></span>
+                  <span class="absolute top-5 right-16 w-2 h-3 bg-gold rotate-12 rounded-[1px]"></span>
+                  <span class="absolute top-3 right-6 w-2.5 h-1.5 bg-purple-400 -rotate-12 rounded-[1px]"></span>
+                </div>
+
+                <!-- Dimmed Gameplay Header (Crisp SVGs) -->
+                <div class="flex items-center justify-between px-1.5 pt-1 pb-2 opacity-65">
+                  <div class="flex items-center gap-2 text-gold">
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                    </svg>
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="7" y="3" width="10" height="18" rx="2" />
+                    </svg>
+                  </div>
+                  <span class="font-display font-bold text-[9px] text-emeraldP2 tracking-wider">QUICK DUEL</span>
+                  <span class="w-4 h-4 rounded-full border border-mutedText/70 flex items-center justify-center">
+                    <svg class="w-2 h-2 text-mutedText" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <rect x="4" y="3.5" width="2.5" height="9" rx="1" />
+                      <rect x="9.5" y="3.5" width="2.5" height="9" rx="1" />
+                    </svg>
+                  </span>
+                </div>
+
+                <!-- Dark Espresso Modal (#140b0b) with Gold Border -->
+                <div class="relative z-10 rounded-[22px] bg-espresso border-[1.8px] border-gold p-3 flex flex-col justify-between text-center shadow-2xl">
+                  <!-- Inner Gold-Bordered Share Card -->
+                  <div class="rounded-2xl bg-gradient-to-b from-[#23100e] to-[#110808] border border-gold/35 p-3">
+                    <div class="flex items-center justify-center gap-1.5">
+                      <span class="w-4 h-4 rounded-full border border-gold text-gold text-[8px] flex items-center justify-center font-bold">&#9860;</span>
+                      <span class="font-display font-extrabold text-[11px] tracking-[0.14em] text-inkLight">TOKEN LUDO</span>
+                    </div>
+                    <div class="font-display text-[7.5px] tracking-[0.18em] text-gold/80 uppercase mt-0.5">16-TOKEN DICE DUEL</div>
+
+                    <!-- Gold Trophy Circle -->
+                    <div class="mt-2.5 mx-auto w-12 h-12 rounded-full bg-gradient-to-b from-[#f7d256] to-[#c9920d] border-2 border-white/80 flex items-center justify-center shadow-gold-cta">
+                      <svg class="w-6 h-6 text-[#2b1407]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                      </svg>
+                    </div>
+
+                    <div class="mt-2.5 inline-block px-3 py-0.5 rounded-full bg-gold/15 border border-gold/45 font-display font-bold text-[8px] tracking-[0.12em] text-gold uppercase">
+                      MATCH WINNER
+                    </div>
+                    <div class="mt-1 font-display font-black text-base text-inkLight tracking-wide">PLAYER 1</div>
+
+                    <!-- 16 : 0 Score Box -->
+                    <div class="mt-2 rounded-xl bg-white/[0.04] border border-white/10 py-2 px-2">
+                      <div class="grid grid-cols-3 items-center">
+                        <div>
+                          <div class="text-[7.5px] font-bold text-gold uppercase">PLAYER 1</div>
+                          <div class="font-display font-black text-2xl text-inkLight leading-tight">16</div>
+                        </div>
+                        <div class="font-display font-black text-xl text-gold">:</div>
+                        <div>
+                          <div class="text-[7.5px] font-bold text-mutedText uppercase">PLAYER 2</div>
+                          <div class="font-display font-black text-2xl text-mutedText/65 leading-tight">0</div>
+                        </div>
+                      </div>
+                      <div class="mt-1.5 inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-[#7f1d1d]/75 border border-red-500/40 text-[8px] font-bold text-red-200">
+                        <span>&#128293; 16-0 CLEAN SWEEP</span>
+                      </div>
+                    </div>
+
+                    <!-- 3 Stat Boxes -->
+                    <div class="mt-2 grid grid-cols-3 gap-1.5">
+                      <div class="rounded-lg bg-white/[0.04] border border-white/10 py-1.5">
+                        <div class="font-display font-extrabold text-[11px] text-inkLight">26</div>
+                        <div class="text-[6.5px] font-bold text-mutedText uppercase">ROUNDS</div>
+                      </div>
+                      <div class="rounded-lg bg-white/[0.04] border border-white/10 py-1.5">
+                        <div class="font-display font-extrabold text-[11px] text-inkLight">+5</div>
+                        <div class="text-[6.5px] font-bold text-mutedText uppercase">MAX STEAL</div>
+                      </div>
+                      <div class="rounded-lg bg-white/[0.04] border border-white/10 py-1.5">
+                        <div class="font-display font-extrabold text-[11px] text-inkLight">01:04</div>
+                        <div class="text-[6.5px] font-bold text-mutedText uppercase">TIME</div>
+                      </div>
+                    </div>
+
+                    <!-- Share Card Footer with Inline Instagram Camera SVG -->
+                    <div class="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between text-[7.2px] text-mutedText">
+                      <span class="inline-flex items-center gap-1">
+                        <svg class="w-2.5 h-2.5 text-mutedText shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="2" y="2" width="20" height="20" rx="5" />
+                          <circle cx="12" cy="12" r="4.5" />
+                          <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span>@tokenludo.game &nbsp;#Tokenludo</span>
+                      </span>
+                      <span class="px-2 py-0.5 rounded bg-gold text-inkDark font-display font-extrabold text-[7px]">PLAY NOW</span>
+                    </div>
+                  </div>
+
+                  <!-- 3 Share Pills with Crisp Inline SVGs -->
+                  <div class="mt-2.5 grid grid-cols-3 gap-1.5 text-[7px] font-bold">
+                    <div class="py-1.5 px-1 rounded-lg bg-[#052e1c] border border-emeraldP2/50 text-emeraldP2 inline-flex items-center justify-center gap-1 truncate">
+                      <svg class="w-2.5 h-2.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                      </svg>
+                      <span class="truncate">WhatsApp</span>
+                    </div>
+                    <div class="py-1.5 px-1 rounded-lg bg-[#3b0722] border border-pink-500/45 text-pink-400 inline-flex items-center justify-center gap-1 truncate">
+                      <svg class="w-2.5 h-2.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4.5" />
+                        <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+                      </svg>
+                      <span class="truncate">Instagram</span>
+                    </div>
+                    <div class="py-1.5 px-1 rounded-lg bg-[#26180d] border border-gold/35 text-gold inline-flex items-center justify-center gap-0.5 truncate">
+                      <span>&hellip; More</span>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Action Buttons -->
+                  <div class="mt-2 grid grid-cols-2 gap-1.5 text-[9.5px] font-display font-extrabold">
+                    <div class="py-2 rounded-xl border border-white/20 text-inkLight">MAIN MENU</div>
+                    <div class="py-2 rounded-xl bg-gold text-inkDark">&#8634; REMATCH</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <h3 class="mt-4 font-display font-bold text-base text-inkLight">5. Match Winner Share Card</h3>
+            <p class="mt-1 text-xs text-mutedText text-center">Instant WhatsApp &amp; IG Story victory cards</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 4. BENTO FEATURES GRID (6 STUDIO-GRADE CARDS)                         -->
+    <!-- ===================================================================== -->
+    <section id="features" class="py-20 sm:py-28 border-t border-borderGreen">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-2xl reveal">
+          <span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold">Built for Pure Duels</span>
+          <h2 class="mt-2.5 font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-inkLight">
+            Everything you need for fast, fair tabletop strategy.
+          </h2>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <!-- Card 1 -->
+          <article class="reveal rounded-2xl bg-card border border-borderGreen hover:border-gold/45 p-6 transition-colors shadow-card">
+            <div class="w-11 h-11 rounded-xl bg-gold/15 border border-gold/35 flex items-center justify-center text-gold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">2-Player Pass &amp; Play &amp; Solo Bot AI</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Duel a friend face-to-face on one Android device with custom player names or practice solo against the responsive offline Bot.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="reveal rounded-2xl bg-card border border-borderGreen hover:border-gold/45 p-6 transition-colors shadow-card">
+            <div class="w-11 h-11 rounded-xl bg-emeraldP2/15 border border-emeraldP2/35 flex items-center justify-center text-emeraldP2">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">Quick Duel, Best of 3 &amp; Best of 5 Series</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Jump into a rapid 1-minute Quick Duel or settle rivalries across Best of 3 and Best of 5 multi-round series formats.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="reveal rounded-2xl bg-card border border-borderGreen hover:border-gold/45 p-6 transition-colors shadow-card">
+            <div class="w-11 h-11 rounded-xl bg-gold/15 border border-gold/35 flex items-center justify-center text-gold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="13" r="8" />
+                <path d="M12 9v4l2.5 1.5" />
+                <path d="M9 2h6" />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">15-Second Turn Timer &amp; Coin Toss</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Keep matches intense with the toggleable 15-second turn clock, fair opening Coin Toss, and Left/Center/Right dice box positioning.
+            </p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="reveal rounded-2xl bg-card border border-borderGreen hover:border-gold/45 p-6 transition-colors shadow-card">
+            <div class="w-11 h-11 rounded-xl bg-emeraldP2/15 border border-emeraldP2/35 flex items-center justify-center text-emeraldP2">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="13.5" cy="6.5" r="1" fill="currentColor" />
+                <circle cx="17.5" cy="10.5" r="1" fill="currentColor" />
+                <circle cx="8.5" cy="7.5" r="1" fill="currentColor" />
+                <circle cx="6.5" cy="12.5" r="1" fill="currentColor" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.83-.44-1.12-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.56-2.5 5.56-5.55C21.97 6.01 17.46 2 12 2z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">8 Handcrafted Themes &amp; 4 Board Surfaces</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Personalize your table with Emerald Felt, Matte Obsidian, and Royal Marble surfaces paired with 8 handcrafted Light and Dark palettes.
+            </p>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="reveal rounded-2xl bg-card border border-borderGreen hover:border-gold/45 p-6 transition-colors shadow-card">
+            <div class="w-11 h-11 rounded-xl bg-gold/15 border border-gold/35 flex items-center justify-center text-gold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">In-Match Pause Menu, Haptics &amp; Instant Surrender</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Toggle Sound SFX or Haptics mid-duel, access Privacy &amp; Data Safety, or let either player concede cleanly with one-tap Surrender buttons.
+            </p>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="reveal rounded-2xl bg-card border border-borderGreen hover:border-gold/45 p-6 transition-colors shadow-card">
+            <div class="w-11 h-11 rounded-xl bg-emeraldP2/15 border border-emeraldP2/35 flex items-center justify-center text-emeraldP2">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">100% Offline &amp; Privacy-First</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Zero sensitive permissions, no sign-ups, and local-only match stats &amp; history. Play seamlessly anywhere—even in airplane mode.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5. HOW TO PLAY (4 NUMBERED STEPS)                                     -->
+    <!-- ===================================================================== -->
+    <section id="how-to-play" class="py-20 sm:py-28 border-t border-borderGreen bg-surface/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-2xl reveal">
+          <span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold">How to Play</span>
+          <h2 class="mt-2.5 font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-inkLight">
+            Learn in 10 seconds. Every roll matters.
+          </h2>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <!-- Step 1 -->
+          <div class="reveal rounded-2xl bg-card border border-borderGreen p-6 shadow-card">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-gold text-inkDark font-display font-black text-sm">1</span>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">Start 8 vs 8</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              16 tokens sit on the emerald felt table—8 for Player 1 and 8 for Player 2. A fair Coin Toss decides who rolls first.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="reveal rounded-2xl bg-card border border-borderGreen p-6 shadow-card">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-gold text-inkDark font-display font-black text-sm">2</span>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">Roll to Steal</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Tap the dice box within 15 seconds. Whatever number you roll, you steal that exact number of tokens from your opponent's stack.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="reveal rounded-2xl bg-card border border-borderGreen p-6 shadow-card">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-gold text-inkDark font-display font-black text-sm">3</span>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">Watch for Overshoots</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Roll higher than your rival's remaining tokens? That's an overshoot—no tokens transfer and the turn passes immediately.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="reveal rounded-2xl bg-card border border-borderGreen p-6 shadow-card">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-gold text-inkDark font-display font-black text-sm">4</span>
+            <h3 class="mt-5 font-display font-bold text-lg text-inkLight">Hit 16/16 for Clean Sweep</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mutedText">
+              Land the exact finishing roll to capture all 16 tokens, clinch the Clean Sweep, and share your Victory Card.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5.5. TOKEN LUDO VS CLASSIC LUDO COMPARISON                            -->
+    <!-- ===================================================================== -->
+    <section class="py-20 sm:py-24 border-t border-borderGreen">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold">Why Players Switch</span>
+          <h2 class="mt-2.5 font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-inkLight">
+            Token Ludo vs. Classic Ludo
+          </h2>
+          <p class="mt-3 text-base text-mutedText">
+            Built for quick breaks, travel, and high-tension 1v1 duels—without the 25-minute board crawl.
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+          <!-- Classic Ludo Card -->
+          <div class="rounded-2xl bg-surface/90 border border-borderGreen/80 p-6 sm:p-7">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display font-bold text-xl text-mutedText">Classic Ludo</h3>
+              <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-semibold text-mutedText">Traditional</span>
+            </div>
+            <ul class="mt-6 space-y-4 text-sm text-mutedText">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-white/5 text-mutedText/80 flex items-center justify-center text-xs shrink-0">&times;</span>
+                <span><strong class="text-inkLight/80">15&ndash;30 min per match</strong> &mdash; hard to finish during a short break.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-white/5 text-mutedText/80 flex items-center justify-center text-xs shrink-0">&times;</span>
+                <span><strong class="text-inkLight/80">Slow early turns</strong> &mdash; waiting on a 6 just to unlock pieces.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-white/5 text-mutedText/80 flex items-center justify-center text-xs shrink-0">&times;</span>
+                <span><strong class="text-inkLight/80">Heavy apps &amp; logins</strong> &mdash; cluttered lobbies, coins, and online requirements.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-white/5 text-mutedText/80 flex items-center justify-center text-xs shrink-0">&times;</span>
+                <span><strong class="text-inkLight/80">Static look</strong> &mdash; one standard board with minimal customization.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Token Ludo Card (Highlighted) -->
+          <div class="rounded-2xl bg-gradient-to-b from-[#0d3326] to-card border-[1.5px] border-gold/65 p-6 sm:p-7 shadow-card">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display font-extrabold text-xl text-inkLight">Token Ludo</h3>
+              <span class="px-2.5 py-1 rounded-full bg-gold text-inkDark text-[11px] font-display font-extrabold uppercase tracking-wide">Fast 1v1 Duel</span>
+            </div>
+            <ul class="mt-6 space-y-4 text-sm text-inkLight/90">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-emeraldP2/20 border border-emeraldP2/50 text-emeraldP2 flex items-center justify-center text-xs font-bold shrink-0">&#10003;</span>
+                <span><strong class="text-gold">1&ndash;2 min Quick Duels</strong> &mdash; or play Best of 3 &amp; Best of 5 series.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-emeraldP2/20 border border-emeraldP2/50 text-emeraldP2 flex items-center justify-center text-xs font-bold shrink-0">&#10003;</span>
+                <span><strong class="text-gold">Zero-Sum Tug-of-War</strong> &mdash; every roll steals tokens immediately with thrilling exact-finish overshoots.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-emeraldP2/20 border border-emeraldP2/50 text-emeraldP2 flex items-center justify-center text-xs font-bold shrink-0">&#10003;</span>
+                <span><strong class="text-gold">100% Offline &amp; Zero Sign-Up</strong> &mdash; launch and roll in 2 seconds, even in airplane mode.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 w-5 h-5 rounded-full bg-emeraldP2/20 border border-emeraldP2/50 text-emeraldP2 flex items-center justify-center text-xs font-bold shrink-0">&#10003;</span>
+                <span><strong class="text-gold">8 Themes &amp; 4 Tabletop Surfaces</strong> &mdash; Emerald Felt, Matte Obsidian, Royal Marble &amp; more.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6. INTERACTIVE FAQ ACCORDION (4 CONCISE Q&As)                         -->
+    <!-- ===================================================================== -->
+    <section id="faq" class="py-20 sm:py-28 border-t border-borderGreen">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center reveal">
+          <span class="font-display text-xs font-bold uppercase tracking-[0.18em] text-gold">FAQ</span>
+          <h2 class="mt-2.5 font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-inkLight">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="mt-12 space-y-3.5 reveal">
+
+          <!-- Q1 -->
+          <div class="faq-item rounded-2xl bg-card border border-borderGreen" data-open="true">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="true">
+              <span class="font-display font-bold text-base sm:text-lg text-inkLight">Does Token Ludo work 100% offline?</span>
+              <svg class="faq-chevron w-5 h-5 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner">
+                <p class="px-6 pb-5 text-sm sm:text-base leading-relaxed text-mutedText">
+                  Yes! Both 2-Player Pass-and-Play and Solo vs. Bot run completely offline with zero Wi-Fi or mobile data required.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item rounded-2xl bg-card border border-borderGreen" data-open="false">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+              <span class="font-display font-bold text-base sm:text-lg text-inkLight">How does the Overshoot rule work?</span>
+              <svg class="faq-chevron w-5 h-5 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner">
+                <p class="px-6 pb-5 text-sm sm:text-base leading-relaxed text-mutedText">
+                  If your opponent has 2 tokens left and you roll a 4, you overshoot—no tokens move and your opponent gets their turn. You must roll equal to or less than their remaining tokens to finish the duel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item rounded-2xl bg-card border border-borderGreen" data-open="false">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+              <span class="font-display font-bold text-base sm:text-lg text-inkLight">How do I unlock custom themes and board surfaces?</span>
+              <svg class="faq-chevron w-5 h-5 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner">
+                <p class="px-6 pb-5 text-sm sm:text-base leading-relaxed text-mutedText">
+                  Open the Themes Catalog directly from the home screen to switch between 8 Light &amp; Dark palettes and unlock surfaces like Emerald Felt, Matte Obsidian, and Royal Marble as you play matches.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item rounded-2xl bg-card border border-borderGreen" data-open="false">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+              <span class="font-display font-bold text-base sm:text-lg text-inkLight">What permissions or personal data does Token Ludo require?</span>
+              <svg class="faq-chevron w-5 h-5 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <div class="faq-inner">
+                <p class="px-6 pb-5 text-sm sm:text-base leading-relaxed text-mutedText">
+                  Token Ludo requires no account creation and no contacts, camera, or location permissions. All match stats and history stay locally on your device. View our <a href="https://sites.google.com/view/token-ludo" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">Privacy Policy</a> for details.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6.5. INDIE STUDIO & FOUNDER NOTE (ASIF LABS)                          -->
+    <!-- ===================================================================== -->
+    <section class="py-14 sm:py-16 border-t border-borderGreen">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal rounded-2xl bg-card/90 border border-borderGreen hover:border-gold/35 px-6 py-7 sm:px-8 sm:py-8 shadow-card transition-colors">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+
+            <!-- Studio Monogram Emblem -->
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#133b2d] to-[#061c15] border border-gold/45 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(232,180,22,0.16)]">
+              <span class="font-display font-black text-xl tracking-tight text-gold">AL</span>
+            </div>
+
+            <!-- Founder & Studio Copy -->
+            <div class="flex-1 min-w-0 text-left">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Crafted by Asif Labs</span>
+                <span class="w-1 h-1 rounded-full bg-borderGreen" aria-hidden="true"></span>
+                <span class="text-[11px] font-medium text-emeraldP2">Independent Android Studio</span>
+              </div>
+              <p class="mt-2 text-sm sm:text-[15px] leading-relaxed text-mutedText">
+                Built independently by <strong class="text-inkLight font-semibold">Asif Ansari</strong> under <strong class="text-inkLight font-semibold">Asif Labs</strong> &mdash; crafted for fast, distraction-free offline tabletop duels without forced logins, bloated lobbies, or clutter.
+              </p>
+              <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-mutedText">
+                <span class="inline-flex items-center gap-1.5 text-inkLight/90">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emeraldP2"></span>
+                  100% Indie Built
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-inkLight/90">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                  Privacy-First &amp; Offline
+                </span>
+                <a href="mailto:support.tokenludo@gmail.com" class="inline-flex items-center gap-1.5 text-gold hover:underline">
+                  <span>Direct Feedback &rarr;</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 7. FINAL DOWNLOAD CTA BANNER + SCAN-TO-DOWNLOAD QR CODE               -->
+    <!-- ===================================================================== -->
+    <section class="py-16 sm:py-24 border-t border-borderGreen bg-surface/90">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal relative rounded-[28px] bg-gradient-to-br from-[#0c2f23] via-card to-[#051a13] border border-gold/35 p-7 sm:p-10 lg:p-12 shadow-card overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+
+            <!-- Left Copy & Play Store Button -->
+            <div class="md:col-span-8 text-left">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/15 border border-gold/35 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-gold">
+                Ready to Roll?
+              </span>
+              <h2 class="mt-4 font-display font-black text-3xl sm:text-4xl tracking-tight text-inkLight leading-tight">
+                Start your first 16-token duel in seconds.
+              </h2>
+              <p class="mt-3 text-sm sm:text-base text-mutedText leading-relaxed max-w-xl">
+                Free on Android, 100% offline, and built for instant 2-player pass-and-play or solo Bot battles. No sign-ups, no waiting.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center gap-3.5">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-gold hover:bg-goldHover text-inkDark font-display font-extrabold text-base tracking-tight transition-all shadow-gold-cta active:scale-[0.98]"
+                >
+                  <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4.5 3.65v16.7c0 .8.87 1.3 1.56.9l14.2-8.35c.68-.4.68-1.4 0-1.8L6.06 2.75c-.69-.4-1.56.1-1.56.9z" />
+                  </svg>
+                  <span>Get Token Ludo on Google Play</span>
+                </a>
+                <span class="text-xs font-medium text-emeraldP2">Android &bull; Offline &bull; Free</span>
+              </div>
+            </div>
+
+            <!-- Right Scannable QR Code Card for Desktop Visitors -->
+            <div class="md:col-span-4 flex flex-col items-center md:items-end">
+              <div class="rounded-2xl bg-[#04140e] border border-borderGreen p-4 flex flex-col items-center text-center shadow-lg">
+                <div class="w-32 h-32 rounded-xl bg-white p-2 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=4&color=051610&bgcolor=ffffff&data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.asiflabs.tokenludo"
+                    alt="Scan QR code to download Token Ludo on Google Play"
+                    width="112"
+                    height="112"
+                    loading="lazy"
+                    class="w-full h-full object-contain"
+                    onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                  />
+                  <div class="hidden text-center text-[10px] font-display font-bold text-inkDark px-2">
+                    Play Store QR
+                  </div>
+                </div>
+                <span class="mt-3 font-display font-bold text-xs text-inkLight">Scan to Install</span>
+                <span class="text-[10px] text-mutedText mt-0.5">Point your Android camera</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 8. FOOTER                                                             -->
+  <!-- ===================================================================== -->
+  <footer class="border-t border-borderGreen bg-[#030f0b]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-24 sm:pb-14">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+
+        <!-- Brand Column -->
+        <div class="md:col-span-5">
+          <a href="#" class="inline-flex items-center gap-3 group focus:outline-none" aria-label="Token Ludo Home">
+            <span class="relative flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden shrink-0 shadow-[0_0_12px_rgba(232,180,22,0.3)]">
+              <img
+                src="assets/app_icon.jpg"
+                alt="Token Ludo Icon"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+              />
+              <svg class="hidden w-full h-full" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#navIconBg)" stroke="url(#navIconGold)" stroke-width="3.2" />
+                <rect x="5" y="5" width="54" height="54" rx="11" fill="url(#navIconGlow)" />
+                <rect x="9" y="37" width="13.5" height="4.2" rx="1.6" fill="#0E7490" />
+                <rect x="9" y="33" width="13.5" height="4.2" rx="1.6" fill="#0891B2" />
+                <rect x="9" y="29" width="13.5" height="4.2" rx="1.6" fill="#06B6D4" />
+                <rect x="9" y="25" width="13.5" height="4.2" rx="1.6" fill="#22D3EE" stroke="#A5F3FC" stroke-width="0.6" />
+                <rect x="41.5" y="37" width="13.5" height="4.2" rx="1.6" fill="#991B1B" />
+                <rect x="41.5" y="33" width="13.5" height="4.2" rx="1.6" fill="#DC2626" />
+                <rect x="41.5" y="29" width="13.5" height="4.2" rx="1.6" fill="#EF4444" />
+                <rect x="41.5" y="25" width="13.5" height="4.2" rx="1.6" fill="#F97316" stroke="#FED7AA" stroke-width="0.6" />
+                <polygon points="32,16 46,23 32,30 18,23" fill="#FFFFFF" />
+                <polygon points="18,23 32,30 32,46 18,39" fill="#E4E4E7" />
+                <polygon points="46,23 32,30 32,46 46,39" fill="#D4D4D8" />
+                <!-- Top Face: 4 Red Pips -->
+                <circle cx="32" cy="20.4" r="1.7" fill="#DC2626" />
+                <circle cx="26.4" cy="23" r="1.7" fill="#DC2626" />
+                <circle cx="37.6" cy="23" r="1.7" fill="#DC2626" />
+                <circle cx="32" cy="25.6" r="1.7" fill="#DC2626" />
+                <!-- Left Face: 6 Purple Pips -->
+                <circle cx="21.8" cy="28.3" r="1.4" fill="#7E22CE" />
+                <circle cx="21.8" cy="32.8" r="1.4" fill="#7E22CE" />
+                <circle cx="21.8" cy="37.3" r="1.4" fill="#7E22CE" />
+                <circle cx="27.5" cy="31.1" r="1.4" fill="#7E22CE" />
+                <circle cx="27.5" cy="35.6" r="1.4" fill="#7E22CE" />
+                <circle cx="27.5" cy="40.1" r="1.4" fill="#7E22CE" />
+                <!-- Right Face: 5 Red Pips -->
+                <circle cx="36" cy="32" r="1.4" fill="#DC2626" />
+                <circle cx="42" cy="29" r="1.4" fill="#DC2626" />
+                <circle cx="39" cy="35" r="1.4" fill="#DC2626" />
+                <circle cx="36" cy="40.5" r="1.4" fill="#DC2626" />
+                <circle cx="42" cy="37.5" r="1.4" fill="#DC2626" />
+              </svg>
+            </span>
+            <div class="flex flex-col leading-none">
+              <span class="font-display font-extrabold text-lg tracking-tight text-inkLight">TOKEN LUDO</span>
+              <span class="text-[11px] font-medium text-emeraldP2 mt-0.5">16-Token Zero-Sum Dice Duel</span>
+            </div>
+          </a>
+          <p class="mt-4 text-sm leading-relaxed text-mutedText max-w-sm">
+            A fast, 100% offline 16-token dice duel handcrafted by Asif Labs for instant 2-player pass-and-play and solo Bot battles on Android.
+          </p>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="md:col-span-3">
+          <h3 class="font-display font-bold text-xs uppercase tracking-[0.16em] text-gold">Quick Links</h3>
+          <ul class="mt-4 space-y-2.5 text-sm text-mutedText">
+            <li>
+              <a href="https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo" target="_blank" rel="noopener noreferrer" class="hover:text-inkLight transition-colors">
+                Google Play Store
+              </a>
+            </li>
+            <li>
+              <a href="https://sites.google.com/view/token-ludo" target="_blank" rel="noopener noreferrer" class="hover:text-inkLight transition-colors">
+                Privacy Policy
+              </a>
+            </li>
+            <li><a href="#screens" class="hover:text-inkLight transition-colors">Real Screens</a></li>
+            <li><a href="#how-to-play" class="hover:text-inkLight transition-colors">How to Play</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Social Column -->
+        <div class="md:col-span-4">
+          <h3 class="font-display font-bold text-xs uppercase tracking-[0.16em] text-gold">Connect</h3>
+          <ul class="mt-4 space-y-3 text-sm text-mutedText">
+            <li>
+              <a href="mailto:support.tokenludo@gmail.com" class="hover:text-inkLight transition-colors inline-flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="M22 6l-10 7L2 6" />
+                </svg>
+                <span>support.tokenludo@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/tokenludo.game" target="_blank" rel="noopener noreferrer" class="hover:text-inkLight transition-colors inline-flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emeraldP2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+                <span>@tokenludo.game</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/TokenLudo_game" target="_blank" rel="noopener noreferrer" class="hover:text-inkLight transition-colors inline-flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-mutedText shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span>@TokenLudo_game</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-borderGreen flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-mutedText/80">
+        <p>&copy; 2026 Asif Labs &bull; Founded by Asif Ansari</p>
+        <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- MOBILE STICKY INSTALL BOTTOM BAR (Appears on Scroll on Small Screens) -->
+  <!-- ===================================================================== -->
+  <div
+    id="mobile-sticky-bar"
+    class="sm:hidden fixed bottom-0 inset-x-0 z-40 px-3 pb-3 pt-2 pointer-events-none translate-y-full opacity-0 transition-all duration-300"
+    aria-hidden="true"
+  >
+    <div class="pointer-events-auto rounded-2xl bg-[#061c15]/95 backdrop-blur-md border border-gold/40 px-3.5 py-2.5 shadow-2xl flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <span class="relative w-9 h-9 rounded-xl overflow-hidden shrink-0 border border-gold/40">
+          <img
+            src="assets/app_icon.jpg"
+            alt="Token Ludo"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+          />
+          <svg class="hidden w-full h-full" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#navIconBg)" stroke="url(#navIconGold)" stroke-width="3.2" />
+            <rect x="5" y="5" width="54" height="54" rx="11" fill="url(#navIconGlow)" />
+            <rect x="9" y="37" width="13.5" height="4.2" rx="1.6" fill="#0E7490" />
+            <rect x="9" y="33" width="13.5" height="4.2" rx="1.6" fill="#0891B2" />
+            <rect x="9" y="29" width="13.5" height="4.2" rx="1.6" fill="#06B6D4" />
+            <rect x="9" y="25" width="13.5" height="4.2" rx="1.6" fill="#22D3EE" stroke="#A5F3FC" stroke-width="0.6" />
+            <rect x="41.5" y="37" width="13.5" height="4.2" rx="1.6" fill="#991B1B" />
+            <rect x="41.5" y="33" width="13.5" height="4.2" rx="1.6" fill="#DC2626" />
+            <rect x="41.5" y="29" width="13.5" height="4.2" rx="1.6" fill="#EF4444" />
+            <rect x="41.5" y="25" width="13.5" height="4.2" rx="1.6" fill="#F97316" stroke="#FED7AA" stroke-width="0.6" />
+            <polygon points="32,16 46,23 32,30 18,23" fill="#FFFFFF" />
+            <polygon points="18,23 32,30 32,46 18,39" fill="#E4E4E7" />
+            <polygon points="46,23 32,30 32,46 46,39" fill="#D4D4D8" />
+            <circle cx="32" cy="20.4" r="1.7" fill="#DC2626" />
+            <circle cx="26.4" cy="23" r="1.7" fill="#DC2626" />
+            <circle cx="37.6" cy="23" r="1.7" fill="#DC2626" />
+            <circle cx="32" cy="25.6" r="1.7" fill="#DC2626" />
+            <circle cx="21.8" cy="28.3" r="1.4" fill="#7E22CE" />
+            <circle cx="21.8" cy="32.8" r="1.4" fill="#7E22CE" />
+            <circle cx="21.8" cy="37.3" r="1.4" fill="#7E22CE" />
+            <circle cx="27.5" cy="31.1" r="1.4" fill="#7E22CE" />
+            <circle cx="27.5" cy="35.6" r="1.4" fill="#7E22CE" />
+            <circle cx="27.5" cy="40.1" r="1.4" fill="#7E22CE" />
+            <circle cx="36" cy="32" r="1.4" fill="#DC2626" />
+            <circle cx="42" cy="29" r="1.4" fill="#DC2626" />
+            <circle cx="39" cy="35" r="1.4" fill="#DC2626" />
+            <circle cx="36" cy="40.5" r="1.4" fill="#DC2626" />
+            <circle cx="42" cy="37.5" r="1.4" fill="#DC2626" />
+          </svg>
+        </span>
+        <div class="min-w-0 leading-tight">
+          <div class="font-display font-extrabold text-sm text-inkLight truncate">TOKEN LUDO</div>
+          <div class="text-[11px] font-medium text-emeraldP2 truncate">Free &bull; 100% Offline</div>
+        </div>
+      </div>
+      <a
+        href="https://play.google.com/store/apps/details?id=com.asiflabs.tokenludo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gold hover:bg-goldHover text-inkDark font-display font-extrabold text-xs shadow-gold-cta active:scale-95 transition-transform"
+      >
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.5 3.65v16.7c0 .8.87 1.3 1.56.9l14.2-8.35c.68-.4.68-1.4 0-1.8L6.06 2.75c-.69-.4-1.56.1-1.56.9z" />
+        </svg>
+        <span>Install</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE GAME ENGINE, MOBILE NAV, FAQ & SCROLL REVEAL              -->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------------------------------------------------------------------
+       * 1. MOBILE MENU TOGGLE
+       * ------------------------------------------------------------------- */
+      function initMobileMenu() {
+        try {
+          const btn = document.getElementById('mobile-menu-btn');
+          const menu = document.getElementById('mobile-menu');
+          const openIcon = document.getElementById('icon-open');
+          const closeIcon = document.getElementById('icon-close');
+          if (!btn || !menu) return;
+
+          function setMenuState(open) {
+            menu.classList.toggle('hidden', !open);
+            openIcon.classList.toggle('hidden', open);
+            closeIcon.classList.toggle('hidden', !open);
+            btn.setAttribute('aria-expanded', String(open));
+          }
+
+          btn.addEventListener('click', function () {
+            setMenuState(menu.classList.contains('hidden'));
+          });
+
+          document.querySelectorAll('.mobile-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+              setMenuState(false);
+            });
+          });
+        } catch (err) {
+          console.error('Mobile menu init error:', err);
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * 2. INTERACTIVE HERO GAMEPLAY PHONE (ZERO-OVERFLOW 16-TOKEN DUEL)
+       * ------------------------------------------------------------------- */
+      function initPlayablePhone() {
+        try {
+          const TOTAL_TOKENS = 16;
+          const TURN_SECONDS = 15;
+          const STACK_HEIGHT = 54;
+          const DISC_HEIGHT = 15;
+
+          let p1Tokens = 8;
+          let p2Tokens = 8;
+          let currentTurn = 2; // Player 2 starts
+          let isBotMode = false;
+          let isRolling = false;
+          let isPaused = false;
+          let gameOver = false;
+          let soundEnabled = true;
+          let hapticsEnabled = true;
+          let rounds = 0;
+          let maxSteal = 0;
+          let startTime = Date.now();
+          let timeLeft = TURN_SECONDS;
+          let countdownId = null;
+          let botTimeoutId = null;
+          let rollAnimId = null;
+          let audioCtx = null;
+
+          const p1Zone = document.getElementById('hero-p1-zone');
+          const p2Zone = document.getElementById('hero-p2-zone');
+          const p2NameEl = document.getElementById('hero-p2-name');
+          const p1Dot = document.getElementById('hero-p1-dot');
+          const p2Dot = document.getElementById('hero-p2-dot');
+          const p1Stack = document.getElementById('hero-p1-stack');
+          const p2Stack = document.getElementById('hero-p2-stack');
+          const p1Pill = document.getElementById('hero-p1-pill');
+          const p2Pill = document.getElementById('hero-p2-pill');
+          const bannerText = document.getElementById('hero-banner-text');
+          const turnPill = document.getElementById('hero-turn-pill');
+          const timerBar = document.getElementById('hero-timer-bar');
+          const timerText = document.getElementById('hero-timer-text');
+          const tapHint = document.getElementById('hero-tap-hint');
+          const diceBtn = document.getElementById('hero-dice-btn');
+          const diceGrid = document.getElementById('hero-dice-grid');
+          const mode2pBtn = document.getElementById('hero-mode-2p');
+          const modeBotBtn = document.getElementById('hero-mode-bot');
+          const heroBoardSurface = document.getElementById('hero-board-surface');
+          const surfaceBtns = document.querySelectorAll('.surface-btn');
+          const pauseBtn = document.getElementById('hero-pause-btn');
+          const soundBtn = document.getElementById('hero-sound-btn');
+          const soundOnIcon = document.getElementById('hero-sound-on');
+          const soundOffIcon = document.getElementById('hero-sound-off');
+
+          // Pause Menu Modal Elements
+          const pauseModal = document.getElementById('hero-pause-modal');
+          const pauseSoundToggle = document.getElementById('pause-sound-toggle');
+          const pauseHapticsToggle = document.getElementById('pause-haptics-toggle');
+          const pauseSurrenderP1 = document.getElementById('pause-surrender-p1');
+          const pauseSurrenderP2 = document.getElementById('pause-surrender-p2');
+          const pauseExitBtn = document.getElementById('pause-exit-btn');
+          const pauseResumeBtn = document.getElementById('pause-resume-btn');
+
+          // Victory Modal Elements
+          const victoryModal = document.getElementById('hero-victory-modal');
+          const victoryWinner = document.getElementById('victory-winner-name');
+          const victoryP2Label = document.getElementById('victory-p2-label');
+          const victoryP1Score = document.getElementById('victory-p1-score');
+          const victoryP2Score = document.getElementById('victory-p2-score');
+          const victoryBadgeText = document.getElementById('victory-badge-text');
+          const victoryRounds = document.getElementById('victory-rounds');
+          const victoryMaxSteal = document.getElementById('victory-max-steal');
+          const victoryTime = document.getElementById('victory-time');
+          const victoryMenuBtn = document.getElementById('victory-menu-btn');
+          const victoryRematchBtn = document.getElementById('victory-rematch-btn');
+
+          if (!diceBtn || !diceGrid || !p1Stack || !p2Stack || !victoryModal) return;
+
+          function getP2Label() {
+            return isBotMode ? 'Bot AI' : 'Player 2';
+          }
+
+          /* Lightweight Web Audio API Synthesizer (Zero External Audio URLs) */
+          function playSound(type) {
+            if (!soundEnabled) return;
+            try {
+              const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+              if (!AudioContextClass) return;
+              if (!audioCtx) audioCtx = new AudioContextClass();
+              if (audioCtx.state === 'suspended') audioCtx.resume();
+
+              const now = audioCtx.currentTime;
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+
+              if (type === 'tick') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(340 + Math.random() * 140, now);
+                gain.gain.setValueAtTime(0.035, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+                osc.start(now);
+                osc.stop(now + 0.045);
+              } else if (type === 'steal') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(520, now);
+                osc.frequency.exponentialRampToValueAtTime(780, now + 0.09);
+                gain.gain.setValueAtTime(0.06, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+                osc.start(now);
+                osc.stop(now + 0.13);
+              } else if (type === 'overshoot') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(240, now);
+                osc.frequency.exponentialRampToValueAtTime(150, now + 0.14);
+                gain.gain.setValueAtTime(0.04, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+                osc.start(now);
+                osc.stop(now + 0.17);
+              } else if (type === 'win') {
+                [523.25, 659.25, 783.99].forEach(function (freq, idx) {
+                  const o = audioCtx.createOscillator();
+                  const g = audioCtx.createGain();
+                  o.type = 'triangle';
+                  o.frequency.setValueAtTime(freq, now + idx * 0.09);
+                  g.gain.setValueAtTime(0.07, now + idx * 0.09);
+                  g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.25);
+                  o.connect(g);
+                  g.connect(audioCtx.destination);
+                  o.start(now + idx * 0.09);
+                  o.stop(now + idx * 0.09 + 0.26);
+                });
+              }
+            } catch (e) {
+              /* Ignore audio errors if blocked by browser autoplay policy */
+            }
+          }
+
+          function triggerHaptic(ms) {
+            if (!hapticsEnabled) return;
+            try {
+              if (navigator && typeof navigator.vibrate === 'function') {
+                navigator.vibrate(ms || 15);
+              }
+            } catch (e) {}
+          }
+
+          function clearBotTimer() {
+            if (botTimeoutId) {
+              clearTimeout(botTimeoutId);
+              botTimeoutId = null;
+            }
+          }
+
+          function scheduleBotTurnIfNeeded() {
+            clearBotTimer();
+            if (isBotMode && currentTurn === 2 && !gameOver && !isPaused && !isRolling) {
+              botTimeoutId = setTimeout(function () {
+                if (isBotMode && currentTurn === 2 && !gameOver && !isPaused && !isRolling) {
+                  handleRoll(true);
+                }
+              }, 850);
+            }
+          }
+
+          const DICE_PIPS = {
+            1: [4],
+            2: [2, 6],
+            3: [2, 4, 6],
+            4: [0, 2, 6, 8],
+            5: [0, 2, 4, 6, 8],
+            6: [0, 2, 3, 5, 6, 8]
+          };
+
+          function renderDice(val) {
+            const active = DICE_PIPS[val] || DICE_PIPS[1];
+            const pips = diceGrid.querySelectorAll('.dice-pip');
+            pips.forEach(function (pip) {
+              const idx = Number(pip.getAttribute('data-pip'));
+              pip.classList.toggle('is-on', active.indexOf(idx) !== -1);
+            });
+          }
+
+          /* Overflow-safe stack renderer: 1 to 16 discs ALWAYS fit within 54px */
+          function renderDiscStack(container, count, discClass, topClass) {
+            container.innerHTML = '';
+            if (count <= 0) return;
+            const maxRise = STACK_HEIGHT - DISC_HEIGHT;
+            const step = count > 1 ? Math.min(4.2, maxRise / (count - 1)) : 0;
+
+            for (let i = 0; i < count; i++) {
+              const disc = document.createElement('div');
+              disc.className = 'token-disc ' + discClass + (i === count - 1 ? ' ' + topClass : '');
+              disc.style.bottom = (i * step).toFixed(2) + 'px';
+              container.appendChild(disc);
+            }
+          }
+
+          function stopCountdown() {
+            if (countdownId) {
+              clearInterval(countdownId);
+              countdownId = null;
+            }
+          }
+
+          function updateTimerUI() {
+            const pct = Math.max(0, (timeLeft / TURN_SECONDS) * 100);
+            timerBar.style.width = pct + '%';
+            timerText.textContent = timeLeft + 's';
+            if (timeLeft <= 5) {
+              timerBar.style.backgroundColor = '#f59e0b';
+              timerText.style.color = '#fbbf24';
+            } else {
+              timerBar.style.backgroundColor = '#10b981';
+              timerText.style.color = '#34d399';
+            }
+          }
+
+          function restartCountdown(resetSeconds) {
+            stopCountdown();
+            if (resetSeconds !== false) {
+              timeLeft = TURN_SECONDS;
+            }
+            updateTimerUI();
+
+            countdownId = setInterval(function () {
+              if (gameOver || isPaused) {
+                return;
+              }
+              timeLeft--;
+              if (timeLeft <= 0) {
+                const nextPlayer = currentTurn === 2 ? 1 : 2;
+                bannerText.textContent = 'Time up! Turn passed to ' + (nextPlayer === 2 ? getP2Label() : 'Player 1');
+                currentTurn = nextPlayer;
+                timeLeft = TURN_SECONDS;
+                updateBoardUI();
+                scheduleBotTurnIfNeeded();
+              }
+              updateTimerUI();
+            }, 1000);
+          }
+
+          function syncToggleUI(toggleBtn, isOn) {
+            if (!toggleBtn) return;
+            toggleBtn.setAttribute('aria-checked', String(isOn));
+            toggleBtn.classList.toggle('bg-gold/45', isOn);
+            toggleBtn.classList.toggle('justify-end', isOn);
+            toggleBtn.classList.toggle('bg-white/15', !isOn);
+            toggleBtn.classList.toggle('justify-start', !isOn);
+            const knob = toggleBtn.querySelector('span');
+            if (knob) {
+              knob.classList.toggle('bg-gold', isOn);
+              knob.classList.toggle('bg-mutedText', !isOn);
+            }
+          }
+
+          function syncSoundUI() {
+            if (soundOnIcon && soundOffIcon) {
+              soundOnIcon.classList.toggle('hidden', !soundEnabled);
+              soundOffIcon.classList.toggle('hidden', soundEnabled);
+            }
+            syncToggleUI(pauseSoundToggle, soundEnabled);
+          }
+
+          function openPauseMenu() {
+            if (gameOver || isRolling || !pauseModal) return;
+            isPaused = true;
+            stopCountdown();
+            clearBotTimer();
+            pauseModal.classList.remove('hidden');
+          }
+
+          function closePauseMenu() {
+            if (!pauseModal) return;
+            isPaused = false;
+            pauseModal.classList.add('hidden');
+            if (!gameOver) {
+              restartCountdown(false);
+              scheduleBotTurnIfNeeded();
+            }
+          }
+
+          function updateBoardUI() {
+            p1Pill.textContent = p1Tokens + '/' + TOTAL_TOKENS;
+            p2Pill.textContent = p2Tokens + '/' + TOTAL_TOKENS;
+            if (p2NameEl) p2NameEl.textContent = getP2Label();
+            if (pauseSurrenderP2) {
+              const p2SurrenderSpan = pauseSurrenderP2.querySelector('span');
+              if (p2SurrenderSpan) {
+                p2SurrenderSpan.textContent = isBotMode ? 'Surrender (Bot)' : 'Surrender (P2)';
+              }
+            }
+
+            renderDiscStack(p1Stack, p1Tokens, 'disc-p1', 'disc-p1-top');
+            renderDiscStack(p2Stack, p2Tokens, 'disc-p2', 'disc-p2-top');
+
+            if (currentTurn === 2) {
+              p2Zone.classList.add('player-zone-active');
+              p2Zone.classList.remove('player-zone-idle');
+              p1Zone.classList.remove('player-zone-active');
+              p1Zone.classList.add('player-zone-idle');
+              p2Dot.style.opacity = '1';
+              p1Dot.style.opacity = '0';
+              turnPill.textContent = isBotMode ? "Bot AI's Turn..." : "Player 2's Turn";
+              if (tapHint) tapHint.textContent = isBotMode ? 'BOT AI IS ROLLING...' : 'TAP DICE TO ROLL';
+            } else {
+              p1Zone.classList.add('player-zone-active');
+              p1Zone.classList.remove('player-zone-idle');
+              p2Zone.classList.remove('player-zone-active');
+              p2Zone.classList.add('player-zone-idle');
+              p1Dot.style.opacity = '1';
+              p2Dot.style.opacity = '0';
+              turnPill.textContent = "Player 1's Turn";
+              if (tapHint) tapHint.textContent = 'TAP DICE TO ROLL';
+            }
+          }
+
+          function formatDuration(ms) {
+            const totalSec = Math.max(1, Math.floor(ms / 1000));
+            const mins = String(Math.floor(totalSec / 60)).padStart(2, '0');
+            const secs = String(totalSec % 60).padStart(2, '0');
+            return mins + ':' + secs;
+          }
+
+          function showVictoryModal(winnerNum, bySurrender) {
+            gameOver = true;
+            isPaused = false;
+            stopCountdown();
+            clearBotTimer();
+            playSound('win');
+            triggerHaptic(35);
+            if (pauseModal) pauseModal.classList.add('hidden');
+            victoryWinner.textContent = winnerNum === 2 ? getP2Label().toUpperCase() : 'PLAYER 1';
+            if (victoryP2Label) victoryP2Label.textContent = getP2Label().toUpperCase();
+            victoryP1Score.textContent = String(p1Tokens);
+            victoryP2Score.textContent = String(p2Tokens);
+            victoryP1Score.classList.toggle('text-inkLight', winnerNum === 1);
+            victoryP1Score.classList.toggle('text-mutedText/70', winnerNum !== 1);
+            victoryP2Score.classList.toggle('text-inkLight', winnerNum === 2);
+            victoryP2Score.classList.toggle('text-mutedText/70', winnerNum !== 2);
+            if (victoryBadgeText) {
+              victoryBadgeText.textContent = bySurrender
+                ? '🏳️ VICTORY BY SURRENDER'
+                : '🔥 16-0 CLEAN SWEEP';
+            }
+            victoryRounds.textContent = String(rounds);
+            victoryMaxSteal.textContent = '+' + maxSteal;
+            victoryTime.textContent = formatDuration(Date.now() - startTime);
+            victoryModal.classList.remove('hidden');
+          }
+
+          function resetGame() {
+            p1Tokens = 8;
+            p2Tokens = 8;
+            currentTurn = isBotMode ? 1 : 2;
+            isRolling = false;
+            isPaused = false;
+            gameOver = false;
+            rounds = 0;
+            maxSteal = 0;
+            startTime = Date.now();
+            if (rollAnimId) {
+              clearInterval(rollAnimId);
+              rollAnimId = null;
+            }
+            diceBtn.classList.remove('dice-shake');
+            clearBotTimer();
+            if (pauseModal) pauseModal.classList.add('hidden');
+            victoryModal.classList.add('hidden');
+            renderDice(1);
+            bannerText.textContent = isBotMode
+              ? 'Coin Toss: Player 1 rolls first!'
+              : 'Coin Toss: Player 2 won the toss!';
+            updateBoardUI();
+            restartCountdown(true);
+            scheduleBotTurnIfNeeded();
+          }
+
+          function handleRoll(fromBot) {
+            if (isRolling || gameOver || isPaused) return;
+            if (isBotMode && currentTurn === 2 && !fromBot) return;
+            isRolling = true;
+            clearBotTimer();
+            triggerHaptic(12);
+            diceBtn.classList.add('dice-shake');
+
+            let ticks = 0;
+            rollAnimId = setInterval(function () {
+              ticks++;
+              renderDice(Math.floor(Math.random() * 6) + 1);
+              playSound('tick');
+              if (ticks >= 5) {
+                clearInterval(rollAnimId);
+                rollAnimId = null;
+                diceBtn.classList.remove('dice-shake');
+
+                const roll = Math.floor(Math.random() * 6) + 1;
+                renderDice(roll);
+                rounds++;
+
+                if (currentTurn === 2) {
+                  if (roll > p1Tokens) {
+                    bannerText.textContent = 'Overshoot! Need exact roll';
+                    playSound('overshoot');
+                    currentTurn = 1;
+                  } else {
+                    p2Tokens += roll;
+                    p1Tokens -= roll;
+                    if (roll > maxSteal) maxSteal = roll;
+                    bannerText.textContent = getP2Label() + ' stole ' + roll + (roll === 1 ? ' token!' : ' tokens!');
+                    playSound('steal');
+                    if (p2Tokens === TOTAL_TOKENS) {
+                      updateBoardUI();
+                      showVictoryModal(2);
+                      isRolling = false;
+                      return;
+                    }
+                    currentTurn = 1;
+                  }
+                } else {
+                  if (roll > p2Tokens) {
+                    bannerText.textContent = 'Overshoot! Need exact roll';
+                    playSound('overshoot');
+                    currentTurn = 2;
+                  } else {
+                    p1Tokens += roll;
+                    p2Tokens -= roll;
+                    if (roll > maxSteal) maxSteal = roll;
+                    bannerText.textContent = 'Player 1 stole ' + roll + (roll === 1 ? ' token!' : ' tokens!');
+                    playSound('steal');
+                    if (p1Tokens === TOTAL_TOKENS) {
+                      updateBoardUI();
+                      showVictoryModal(1);
+                      isRolling = false;
+                      return;
+                    }
+                    currentTurn = 2;
+                  }
+                }
+
+                updateBoardUI();
+                restartCountdown(true);
+                isRolling = false;
+                scheduleBotTurnIfNeeded();
+              }
+            }, 55);
+          }
+
+          function setDemoMode(botMode) {
+            isBotMode = botMode;
+            if (mode2pBtn && modeBotBtn) {
+              mode2pBtn.setAttribute('aria-pressed', String(!botMode));
+              modeBotBtn.setAttribute('aria-pressed', String(botMode));
+              mode2pBtn.className = !botMode
+                ? 'py-2 rounded-xl bg-gold text-inkDark font-display font-extrabold text-xs tracking-wide transition-all cursor-pointer'
+                : 'py-2 rounded-xl bg-transparent text-mutedText hover:text-inkLight font-display font-bold text-xs tracking-wide transition-all cursor-pointer';
+              modeBotBtn.className = botMode
+                ? 'py-2 rounded-xl bg-gold text-inkDark font-display font-extrabold text-xs tracking-wide transition-all cursor-pointer'
+                : 'py-2 rounded-xl bg-transparent text-mutedText hover:text-inkLight font-display font-bold text-xs tracking-wide transition-all cursor-pointer';
+            }
+            resetGame();
+          }
+
+          if (mode2pBtn) mode2pBtn.addEventListener('click', function () { setDemoMode(false); });
+          if (modeBotBtn) modeBotBtn.addEventListener('click', function () { setDemoMode(true); });
+
+          /* Live Board Surface Switcher (Emerald Felt / Matte Obsidian / Royal Marble) */
+          if (heroBoardSurface && surfaceBtns.length) {
+            const SURFACE_MAP = {
+              emerald: 'emerald-felt-surface',
+              obsidian: 'obsidian-surface',
+              marble: 'marble-surface'
+            };
+
+            surfaceBtns.forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                const key = btn.getAttribute('data-surface') || 'emerald';
+                heroBoardSurface.classList.remove('emerald-felt-surface', 'obsidian-surface', 'marble-surface');
+                heroBoardSurface.classList.add(SURFACE_MAP[key] || 'emerald-felt-surface');
+
+                surfaceBtns.forEach(function (other) {
+                  const active = other === btn;
+                  other.setAttribute('aria-pressed', String(active));
+                  other.classList.toggle('border-gold', active);
+                  other.classList.toggle('text-gold', active);
+                  other.classList.toggle('bg-card', active);
+                  other.classList.toggle('border-borderGreen', !active);
+                  other.classList.toggle('text-mutedText', !active);
+                  other.classList.toggle('bg-card/70', !active);
+                });
+                triggerHaptic(8);
+              });
+            });
+          }
+
+          if (pauseBtn) {
+            pauseBtn.addEventListener('click', function () {
+              if (isPaused) {
+                closePauseMenu();
+              } else {
+                openPauseMenu();
+              }
+            });
+          }
+
+          if (soundBtn) {
+            soundBtn.addEventListener('click', function () {
+              soundEnabled = !soundEnabled;
+              syncSoundUI();
+            });
+          }
+
+          if (pauseSoundToggle) {
+            pauseSoundToggle.addEventListener('click', function () {
+              soundEnabled = !soundEnabled;
+              syncSoundUI();
+            });
+          }
+
+          if (pauseHapticsToggle) {
+            pauseHapticsToggle.addEventListener('click', function () {
+              hapticsEnabled = !hapticsEnabled;
+              syncToggleUI(pauseHapticsToggle, hapticsEnabled);
+            });
+          }
+
+          if (pauseResumeBtn) pauseResumeBtn.addEventListener('click', closePauseMenu);
+          if (pauseExitBtn) pauseExitBtn.addEventListener('click', resetGame);
+
+          if (pauseSurrenderP1) {
+            pauseSurrenderP1.addEventListener('click', function () {
+              p2Tokens = TOTAL_TOKENS;
+              p1Tokens = 0;
+              updateBoardUI();
+              showVictoryModal(2, true);
+            });
+          }
+
+          if (pauseSurrenderP2) {
+            pauseSurrenderP2.addEventListener('click', function () {
+              p1Tokens = TOTAL_TOKENS;
+              p2Tokens = 0;
+              updateBoardUI();
+              showVictoryModal(1, true);
+            });
+          }
+
+          diceBtn.addEventListener('click', function () { handleRoll(false); });
+          if (victoryRematchBtn) victoryRematchBtn.addEventListener('click', resetGame);
+          if (victoryMenuBtn) victoryMenuBtn.addEventListener('click', resetGame);
+
+          syncSoundUI();
+          syncToggleUI(pauseHapticsToggle, hapticsEnabled);
+          resetGame();
+        } catch (err) {
+          console.error('Playable phone init error:', err);
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * 3. FAQ ACCORDION
+       * ------------------------------------------------------------------- */
+      function initFaq() {
+        try {
+          const items = document.querySelectorAll('.faq-item');
+          items.forEach(function (item) {
+            const trigger = item.querySelector('.faq-trigger');
+            if (!trigger) return;
+
+            trigger.addEventListener('click', function () {
+              const isOpen = item.getAttribute('data-open') === 'true';
+              items.forEach(function (other) {
+                if (other !== item) {
+                  other.setAttribute('data-open', 'false');
+                  const btn = other.querySelector('.faq-trigger');
+                  if (btn) btn.setAttribute('aria-expanded', 'false');
+                }
+              });
+              item.setAttribute('data-open', String(!isOpen));
+              trigger.setAttribute('aria-expanded', String(!isOpen));
+            });
+          });
+        } catch (err) {
+          console.error('FAQ init error:', err);
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * 4. SCROLL REVEAL
+       * ------------------------------------------------------------------- */
+      function initScrollReveal() {
+        try {
+          const els = document.querySelectorAll('.reveal');
+          if (!('IntersectionObserver' in window)) {
+            els.forEach(function (el) { el.classList.add('is-visible'); });
+            return;
+          }
+
+          const observer = new IntersectionObserver(
+            function (entries, obs) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+          );
+
+          els.forEach(function (el) { observer.observe(el); });
+        } catch (err) {
+          console.error('Scroll reveal error:', err);
+        }
+      }
+
+      /* ---------------------------------------------------------------------
+       * 5. MOBILE STICKY INSTALL BAR ON SCROLL
+       * ------------------------------------------------------------------- */
+      function initMobileStickyBar() {
+        try {
+          const bar = document.getElementById('mobile-sticky-bar');
+          if (!bar) return;
+
+          function updateBar() {
+            const shouldShow = window.scrollY > 420;
+            bar.classList.toggle('translate-y-full', !shouldShow);
+            bar.classList.toggle('opacity-0', !shouldShow);
+            bar.setAttribute('aria-hidden', String(!shouldShow));
+          }
+
+          window.addEventListener('scroll', updateBar, { passive: true });
+          updateBar();
+        } catch (err) {
+          console.error('Sticky bar init error:', err);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        initMobileMenu();
+        initPlayablePhone();
+        initFaq();
+        initScrollReveal();
+        initMobileStickyBar();
+      });
+    })();
+  </script>
 </body>
 </html>
