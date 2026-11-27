@@ -39,4 +39,4 @@ Instagram: @tokenludo.game
 
 X (Twitter): @TokenLudo_game
 
-Support: support.tokenludo@gmail.com
+Support Email: support.tokenludo@gmail.com
